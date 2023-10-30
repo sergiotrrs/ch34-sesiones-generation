@@ -1,4 +1,4 @@
-# Ejercicios del bootcamp de Generation Mx
+# Ejercicios del bootcamp de Generation Mx de la CH34
 
 ## CS - Computer Science
 
