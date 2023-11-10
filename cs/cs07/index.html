@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Sesion web07");
+        console.log("CH 34");
+    </script>
+</head>
+
+<body>
+    <h1 id="principal-title">Viernes temático de MIB</h1>
+    <button onclick="changeText()">Cambiar texto</button>
+    <button onclick="changeColorHandler('red')">Cambiar color rojo</button>
+    <!-- Botón que cambia el texto a verde -->
+    <button onclick="changeColorHandler('green')">Cambiar color verde</button>
+    <!-- Botón que reestablesca (negro) el texto -->
+    <button onclick="changeColorHandler('black')">Reestablecer</button>
+    <br>
+    <p class="description" onclick="changeColorToWhite(this)">La diferencia entre tú y yo, es que me queda bien el negro</p>
+    <p class="description" onclick="changeColorToWhite(this)">Soy team calor</p>
+    <h5 class="description" onclick="changeColorToWhite(this)">Tremendo cuarachón se nos puso sentimental</h5>
+    <button onclick="resetText()">Reestablecer los comentarios</button>
+    <script>
+
+        function changeColorToWhite( element ){
+            console.log(element);
+            element.style.color = "white";
+        }
+
+        function changeText() {
+            const refTitle = getReferenceTitle();
+            console.log(refTitle);
+            console.log(typeof refTitle);
+            refTitle.innerHTML = "Me llamo <em>S</em> ";
+        }
+
+        function changeColorHandler(color) {
+            const refTitle = getReferenceTitle();
+            // refTitle.style.color = color;
+            changeColorOfReference( refTitle, color);
+        }
+
+        function changeColorOfReference(reference , color){
+            reference.style.color = color;
+        }
+
+        function getReferenceTitle(){
+            return document.getElementById("principal-title");
+        }
+
+        function resetText(){
+            const refTexts = document.getElementsByClassName("description");
+            console.log(refTexts);
+            for (let index = 0; index < refTexts.length; index++) {
+                console.log("Channge color to: " + refTexts[index]);
+                changeColorOfReference( refTexts[index] , "black" );                 
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
