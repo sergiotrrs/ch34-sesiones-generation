@@ -171,3 +171,46 @@ console.log( parseInt("1000", 2)) // 8
 */
 
 
+// Conversión a String
+console.log( String( 23.4 ) ); // 23.4
+console.log( String(true) ); // true
+console.log( String( [3,4,5,6] )); // 3,4,5,6
+console.log( String( {a:1,b:2} )); // [object Object]
+
+console.log( JSON.stringify( {a:1,b:2} ) ); // {a":1,"b":2}
+
+
+
+// Conversión a Boolean
+/*
+  Para que sea false, debe ser: "", 0, null, undefined
+*/
+
+console.log( Boolean("Hola") ); // true
+console.log( Boolean("false" ) ); // true
+console.log( Boolean(" ") ); // true
+
+console.log( Boolean( undefined ) ); // false
+console.log( Boolean( [] )); // true
+
+// Conversión a Number()
+/*
+ [] = 0;
+ [30] = 30
+ [40,23, 45] = NaN
+ false = 0
+ true = 1
+*/
+console.log( Number( [] ) ); // 0
+console.log( Number( [9] ) ); // 9
+console.log( Number( [3,6,7] ) ); // NaN
+
+
+// Conversión a String()
+/*
+  [] = ""
+  [1,2] = 1,2
+  function(){} = function(){}
+  {} = [object Object]
+
+*/
