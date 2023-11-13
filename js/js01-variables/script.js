@@ -137,6 +137,21 @@ console.log( parseInt("$3") ); // NaN
 console.log( parseInt("3 MxN") ); // 3 
 console.log( Number("3 MxN") ); // NaN
 
+console.log( "$3MNX" + 5 + 6   ); // 14
+console.log( parseInt("$3MNX") + 5 + 6 ); // NaN
+
+console.log( "$3MNX".slice(1) + 5 + 6 ); // 3MNX56
+console.log( parseInt("$3MNX".slice(1)) + 5 + 6   ); // 14
+console.log( Number("$3MNX".slice(1)) + 5 + 6   ); // NaN
+
+console.log( parseInt("$3MXN".replace('$','')) + 5 + 6 ); // 14
+console.log( parseInt("$3333MXN".replace('$','')) + 5 + 6 ); // 3344
+
+console.log( parseInt("$3333MXN".replace( /[^0-9.]/g ,'')) + 5 + 6 ); // 3344
+
+console.log( parseInt("1000")) // 1000
+console.log( parseInt("1000", 2)) // 8
+
 /*
  Number()
   - Convierte directamente una cadena a números
@@ -154,3 +169,5 @@ console.log( Number("3 MxN") ); // NaN
   - Maneja decimales y exponentes
   
 */
+
+
