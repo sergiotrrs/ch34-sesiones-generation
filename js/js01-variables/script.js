@@ -81,7 +81,14 @@ const misDatosDePerfil = {
     /* métodos */
     nombreCompleto: function fullName() {
         return this.nombre +" "+ this.apellido;
-    }
+    },
+
+    numCanciones :  {
+        2020: 5,
+        2021: 30,
+        2023: 56,
+        total: 91
+     }
 };
 
 console.log( `Nombre ${ misDatosDePerfil.nombre }`); // Peso
@@ -89,5 +96,61 @@ console.log( `Apellido ${ misDatosDePerfil["apellido"] }`); // Pluma
 console.log( `Lo que sea: ${ misDatosDePerfil["23"] }`); // Lo que sea
 console.log( `El nombre completo es ${ misDatosDePerfil.nombreCompleto() }`) // Peso Pluma
 
+// Arrays
+// Tipo de objetos especiales que su forleza radica en los métodos con los que cuenta.
+// Almacena diferentes tipos de datos, su primer elemento es el índice 0.
+const cancionesPesoPluma = [
+    "Ella Baila Sola",
+    "Lady Gaga",
+    "Lou Lou",
+    "Laguna",
+    "El Gavilán",
+     {
+        2020: 5,
+        2021: 30,
+        2023: 56,
+        total: 91
+     }
+];
 
+console.log("Canciones por años: " + cancionesPesoPluma[5] ); // [Object Object]
+// índice del objeto de número de canciones del año 2020}
+console.log("Canciones por año 2020: " + cancionesPesoPluma[5]["2020"] ); // 5
+// Mostrar el "total" de canciones de PP.
+console.log("Total de canciones: " + cancionesPesoPluma[5]["total"]);
+console.log("Total de canciones: " + cancionesPesoPluma[5].total);
 
+// Coversión de datos (casting)
+
+// Conversión implícita:
+console.log( "Hola CH " +  34 ); // Hola Ch 34
+console.log( "3" + 5 + 6 ); // "356" string
+console.log( "3" * 3 ); // 9 number
+
+// Conversioes explícitas
+// String a number
+// Number, parseInt, parseFloat
+console.log(  "3" + 5 + 6  ); // "356"
+console.log( Number("3") + 5 + 6 ); // 14
+console.log( parseInt("3") + 5 + 6 ) ; // 14
+console.log( parseInt("$3") ); // NaN
+console.log( parseInt("3 MxN") ); // 3 
+console.log( Number("3 MxN") ); // NaN
+
+/*
+ Number()
+  - Convierte directamente una cadena a números
+  - Si el string tiene caracteres no numéricos ( 12,56 ), devuelve NaN 
+  - Puede manejar decimales y exponentes (3e3)
+  - Puede convertir booleans y object a numbers
+
+  ParseInt()
+  - Convierte una cadena a números enteros
+  - Ignora los caracteres no numéricos después del primer número ( 12,56 -> 12)
+  - Puede aceptar como argumeto, la base numérica parseInt( "1000", 2 ) -> 8 decimal
+
+  parseFloat()
+  - Convierte una cadena a números de punto flotante
+  - Maneja decimales y exponentes
+  
+*/
