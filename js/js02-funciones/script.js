@@ -51,3 +51,44 @@ const potencia = function( base, exponente){
 
 console.log( potencia(2,3)); // 8
 
+const power = ( base, exponent ) => base ** exponent;
+
+// ---------------- Función autoinvocadas-------------
+//    ( selft-incokinng functions)
+// Se autoinvocan, no encesitan un llamado.
+// Se pueden definir con funciones anónimas
+
+( function setUp(){ 
+    const configuracion = "conectarse a la api";
+    const numPort = 8080;
+    console.log("Me autoinvoco");
+    console.log("Puedo servirte como inicializador de tu programa");
+ } )();
+
+// ---------------- Función flecha -------------
+//    ( arrow functions)
+/*
+  Son similares a las funciones expresadas, pero:
+  - No requieren la palabra function.
+  - Si tiene una sola instrucción, no requiere las llaves { }.
+  - Si la instrucción es el mismo retorno, no requiere la palabra return.
+
+*/
+
+// Área de rectángulo con función expresada.
+const areaRectangulo= function(base, altura){
+    return base * altura;
+}
+
+// Área de rectángulo con arrow function
+const areaRectanguloArrowFunc = (base, altura) => base * altura;
+
+console.log(areaRectangulo(10,6)); // 60
+
+console.log( areaRectanguloArrowFunc(4, 5)); //20
+
+const saludo = persona => `Hola ${persona}`;
+const ellaBailaSola = () => `Compa, que le parece esa chica?`;
+
+console.log( saludo("Peso pluma"));
+console.log( ellaBailaSola() );
