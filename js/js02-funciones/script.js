@@ -199,3 +199,28 @@ console.log( dobleUsingMap( numbers) ); // [10, 20, 30, 40, 50]
 
 const doubleUsingMapAndArrowFunction = (array) => array.map( element => element * 2 );
 console.log( doubleUsingMapAndArrowFunction(numbers) ); // [10, 20, 30, 40, 50]
+
+/*
+  Ejercicio 4
+  Crear un programa que itere sobre dos arreglos;
+  si hay cursos en común, imprimirlos en la consola.
+
+  salida: "Cursos en común: Programming, Music"
+*/
+
+const student1Courses = ["Math", "English", "Programming", "Biology", "Physics", "Music"];
+const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
+
+const cursosEnComun = ( student1Courses, student2Courses  ) => {
+  const commonCourses = [];
+  for (let i = 0; i < student1Courses.length; i++) {
+    for (let j = 0; j < student2Courses.length; j++) {
+      if(student1Courses[i] === student2Courses[j]){
+        commonCourses.push( student1Courses[i] );
+      }
+    }
+  }
+ return commonCourses;
+}
+
+console.log(`Cursos en común: ${ cursosEnComun( student1Courses, student2Courses ) }`);
