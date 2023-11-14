@@ -210,6 +210,7 @@ console.log( doubleUsingMapAndArrowFunction(numbers) ); // [10, 20, 30, 40, 50]
 
 const student1Courses = ["Math", "English", "Programming", "Biology", "Physics", "Music"];
 const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
+const student3Courses = ["Spanish", "Music"];
 
 const cursosEnComun = ( student1Courses, student2Courses  ) => {
   const commonCourses = [];
@@ -224,3 +225,33 @@ const cursosEnComun = ( student1Courses, student2Courses  ) => {
 }
 
 console.log(`Cursos en común: ${ cursosEnComun( student1Courses, student2Courses ) }`);
+
+// Resolviendo el ejercicio usando el método filter() y el método includes()
+const commonCoursesUsingFilter = ( student1, student2) => student1.filter( 
+    (course, i, arr) => student2.includes( course )
+  );
+
+console.log(`Cursos en común: ${ commonCoursesUsingFilter( student1Courses, student2Courses ) }`);
+
+// Comparando 3 arreglos de cursos
+const commonCoursesStudent1And2 = commonCoursesUsingFilter( student1Courses, student2Courses );
+const commonCoursesStudet1And2And3 = commonCoursesUsingFilter( commonCoursesStudent1And2, student3Courses );
+console.log(`Cursos en común: ${ commonCoursesStudet1And2And3 }`);
+
+// ------------------- Contar la cantidad de caracteres de una frase -----------
+// "pepe pecas pica papas con un pico y una pala"
+// la cantidad de letras 'p': 8
+// resolverlo usando arrow function}
+// Convertir el texto a Array( split("")   ) y usar el método filter de arreglos.
+
+const phrase = "pepe pecas pica papas con un pico y una pala";
+// const phrase = "Pepe Pecas Pica Papas Con Un Pico y Una Pala";
+
+// const countChar = (phrase, character) => phrase.split("").filter( element => element === character ).length;
+const countChar = (phrase, character) => {
+  const characters = phrase.split(""); //[p,e,p,e, , p... ]
+  const filterCharacters = characters.filter(  (element, index, arr)=> element === character ); // [p..p,p]
+  return filterCharacters.length; // 8
+} 
+
+console.log( countChar( phrase, "p"));
