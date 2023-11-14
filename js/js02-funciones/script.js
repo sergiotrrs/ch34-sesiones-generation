@@ -92,3 +92,29 @@ const ellaBailaSola = () => `Compa, que le parece esa chica?`;
 
 console.log( saludo("Peso pluma"));
 console.log( ellaBailaSola() );
+
+// ---------------- Parámetros default -------------
+
+const saludoGeneration = ( persona = "persona", cohorte= "cohorte Mx") => 
+                          `Hola ${persona}, que gusto que estés en la ${cohorte}`;
+
+console.log( saludoGeneration("Joseph", "Ch-34") );
+console.log( saludoGeneration() );  // Hola persona, que gusto que estés en la cohorte Mx
+console.log( saludoGeneration("Chino") );  // Hola Chino, que gusto que estés en la cohorte Mx
+
+// ---------------- Rest Parameters -------------
+/*
+  Nos permite representar una serie ed valores indefinidos
+  en los argumentos.
+  Estos se presentan como un array.
+  El rest parameter debe estar al final de la lista de parámetros.
+
+*/
+
+const sumatoriaVariosNumeros = ( a , b ) => {
+  let suma;
+  suma = a + b
+  return suma;
+}
+
+console.log( `Sumatoria de 2 números 4 + 6 = ${ sumatoriaVariosNumeros(4,6)}` );
