@@ -111,10 +111,19 @@ console.log( saludoGeneration("Chino") );  // Hola Chino, que gusto que estés e
 
 */
 
-const sumatoriaVariosNumeros = ( a , b ) => {
-  let suma;
-  suma = a + b
+const sumatoriaVariosNumeros = ( a , b , ...manyMoreArgs) => {
+  let suma = a + b;  
+
+/*   for (let index = 0; index < manyMoreArgs.length; index++) {
+    suma = suma + manyMoreArgs[index]; // suma += mamanyMoreArgs[index];
+  } */
+ 
+  suma += manyMoreArgs.reduce(  (accumulator, currentValue)=> accumulator+currentValue, 0 );
+
   return suma;
 }
 
-console.log( `Sumatoria de 2 números 4 + 6 = ${ sumatoriaVariosNumeros(4,6)}` );
+console.log( `Sumatoria de 2 números 4 + 6 = ${ sumatoriaVariosNumeros(4,6)}` ); // 10
+console.log( `Sumatoria de 4 números 4 + 6 + 5 + 7 = ${ sumatoriaVariosNumeros(4,6,5,7)}` ); // 22
+
+// ---------------- Funciones de callback -------------
