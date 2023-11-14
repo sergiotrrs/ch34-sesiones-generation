@@ -151,19 +151,20 @@ const printToH2 = message => {
 const getH2Message = ()=> document.getElementById("message");
 
 // Función que obtenga un mensaje e imprima en consola o alert o DOM o lo que se me ocurra.
-function getMessageAndPrint( option = "console" ){
+function getMessageAndPrint( fncPrint  ){
   const message = getUserMessage();
-  if ( option === "console"){
-    printToConsole( message );
-  } else if( option === "alert" ) {
-    printToAlert( message );
-  } else {
-    printToH2( message );
-  }
+  fncPrint( message );
 }
 
 const getUserMessage = () => `Martes de frescura`;
 
-// getMessageAndPrint();
-// getMessageAndPrint("alert");
-getMessageAndPrint("DOM");
+getMessageAndPrint( printToConsole );
+// getMessageAndPrint( printToAlert );
+getMessageAndPrint( printToH2 );
+
+// Imprimir en el DOM en un paragraph
+getMessageAndPrint( function( message){ 
+  document.getElementById("p-message").innerHTML = message;
+});
+
+getMessageAndPrint( message => document.getElementById("p-message2").innerHTML = message );
