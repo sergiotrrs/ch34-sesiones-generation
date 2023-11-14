@@ -150,12 +150,20 @@ const printToH2 = message => {
 };
 const getH2Message = ()=> document.getElementById("message");
 
-// Función que obtenga un mensaje e imprima en consola.
-function getMessageAndPrint(){
+// Función que obtenga un mensaje e imprima en consola o alert o DOM o lo que se me ocurra.
+function getMessageAndPrint( option = "console" ){
   const message = getUserMessage();
-  printToConsole( message );
+  if ( option === "console"){
+    printToConsole( message );
+  } else if( option === "alert" ) {
+    printToAlert( message );
+  } else {
+    printToH2( message );
+  }
 }
 
 const getUserMessage = () => `Martes de frescura`;
 
-getMessageAndPrint();
+// getMessageAndPrint();
+// getMessageAndPrint("alert");
+getMessageAndPrint("DOM");
