@@ -104,7 +104,7 @@ console.log( saludoGeneration("Chino") );  // Hola Chino, que gusto que estés e
 
 // ---------------- Rest Parameters -------------
 /*
-  Nos permite representar una serie ed valores indefinidos
+  Nos permite representar una serie de valores indefinidos
   en los argumentos.
   Estos se presentan como un array.
   El rest parameter debe estar al final de la lista de parámetros.
@@ -127,3 +127,35 @@ console.log( `Sumatoria de 2 números 4 + 6 = ${ sumatoriaVariosNumeros(4,6)}` )
 console.log( `Sumatoria de 4 números 4 + 6 + 5 + 7 = ${ sumatoriaVariosNumeros(4,6,5,7)}` ); // 22
 
 // ---------------- Funciones de callback -------------
+/*
+  Función que se pasa a otra función como argumento, para
+  luego invocarla para complementar algún tipo de rutina o acción.
+
+*/
+
+/*
+ Realizar 3 funciones.
+  1 función que reciba un mensaje e imprima en consola
+  1 función que reciba un mensaje e imprima en alert
+  1 función que reciba un mensaje e imprima en el DOM, en H2
+*/
+
+const printToConsole = message => console.log(message);
+
+const printToAlert = message => alert(message);
+
+const printToH2 = message => {
+  const refH2 = getH2Message();
+  refH2.innerHTML = message;
+};
+const getH2Message = ()=> document.getElementById("message");
+
+// Función que obtenga un mensaje e imprima en consola.
+function getMessageAndPrint(){
+  const message = getUserMessage();
+  printToConsole( message );
+}
+
+const getUserMessage = () => `Martes de frescura`;
+
+getMessageAndPrint();
