@@ -168,3 +168,34 @@ getMessageAndPrint( function( message){
 });
 
 getMessageAndPrint( message => document.getElementById("p-message2").innerHTML = message );
+
+// -------------------------------------------------------------------
+/*
+    Ejercicio 2
+    Escribe una función que tome un arreglo de números,
+    duplique el valor de cada número del arreglo,
+    e imprima el nuevo arreglo actualizado.
+    [5, 10, 15, 20, 25] -> [10, 20, 30, 40, 50]
+*/
+
+const double = (array) => {
+  const doubleNumbers = [];
+  for (let index = 0; index < array.length; index++) {
+    doubleNumbers.push( array[index] * 2 );
+  }
+  return doubleNumbers;  
+}
+const numbers = [5, 10, 15, 20, 25];
+console.log( double( numbers) ); // [10, 20, 30, 40, 50]
+
+// Usando callback con map
+const fncCallBackforMap = (element, index, array) => element * 2;
+
+const dobleUsingMap = (array) => array.map( fncCallBackforMap );
+
+              //[5, 10, 15, 20, 25];
+
+console.log( dobleUsingMap( numbers) ); // [10, 20, 30, 40, 50]
+
+const doubleUsingMapAndArrowFunction = (array) => array.map( element => element * 2 );
+console.log( doubleUsingMapAndArrowFunction(numbers) ); // [10, 20, 30, 40, 50]
