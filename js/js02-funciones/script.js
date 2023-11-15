@@ -326,10 +326,25 @@ console.log(`Factorial recursivo de 5: ${factorialRecursivo(5)}`);
   de un número determinado, hasta el número 1.
 
   número: 12.
-  Resultado: 12 + 10 + 8 + 6 + 4 + 2 
+  Resultado: 12 + 10 + 8 + 6 + 4 + 2 = 42
 
   número: 7
-  Resultado: 6 + 4 + 2 
+  Resultado: 6 + 4 + 2  = 12
 
   Recomendación: usar módulo %2
 */
+
+function sumEvenNumbers( number ){
+  if (number % 2 !== 0) { // si el núm es impar le resta ua unidad
+     number--;
+  }
+
+  if( number <= 2){
+    return 2;
+  } else {
+    return number + sumEvenNumbers( number - 1 )
+  }
+}
+
+console.log(`Suma de pares desde 12: ${sumEvenNumbers(12)}`); // 42
+console.log(`Suma de pares desde 7: ${sumEvenNumbers(7)}`); // 12
