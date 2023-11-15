@@ -255,3 +255,81 @@ const countChar = (phrase, character) => {
 } 
 
 console.log( countChar( phrase, "p"));
+
+// ------------------- Funciones Recursivas -----------
+/*
+  Es una técnica de programación en donde la función se llama así misma.
+  Se debe tener precausión de no entrar en un ciclo infinito.
+
+  En algunos casos, la recursividad puede ser más legible y clara
+  ya que refleja de manera directa la naturaleza recursiva del problema.
+
+  function funcionRecursiva ( valor ){
+     if( condicionParo ){
+
+     } else {
+        funcionRecursiva( nuevoValor ); // llamada recursiva
+     }
+  }
+
+*/
+
+// Realizar una función que calcule el factorial de un número
+// Mostrar en consola el factorial de 5.
+/*
+  El factorial de un número se calcula multiplicando 
+  el número por cada número que lo precede hasta el 1. 
+  Por ejemplo: 3!=3x2x1=6.
+*/
+function factorialAscendente( number ){
+  let factorial = 1;
+  for(let i = 1; i <= number; i++){
+    factorial = factorial * i;
+  }
+  return factorial;
+}
+
+function factorialDescendente( number ){
+  let factorial = 1;
+  for(let i = number; i > 0 ; i--){
+    factorial = factorial * i;
+  }
+  return factorial;
+}
+
+const factorialArrowFunction = ( number ) => {
+  let factorial = 1;
+  for(let i = number; i > 0 ; i--){
+    factorial = factorial * i;
+  }
+  return factorial;
+}
+
+console.log(`El factorial de 5 es : ${ factorialAscendente(5)}`);
+console.log(`El factorial de 5 es : ${ factorialDescendente(5)}`);
+
+// Solución del ejercico con recursividad
+
+function factorialRecursivo ( number ) {
+  if( number < 1 ){
+    return 1;
+  } else {
+    return number * factorialRecursivo( number - 1 );
+  }
+}
+
+console.log(`Factorial recursivo de 5: ${factorialRecursivo(5)}`);
+
+/*
+  Calcular suma de números pares.
+  Realizar una función recursiva que sume los números pares
+  de un número determinado, hasta el número 1.
+
+  número: 12.
+  Resultado: 12 + 10 + 8 + 6 + 4 + 2 
+
+  número: 7
+  Resultado: 6 + 4 + 2 
+
+  Recomendación: usar módulo %2
+*/
