@@ -242,4 +242,40 @@ const mesSwitch = (numMes) => {
   };
   console.log(`Estacion del año (if): ${mesIf(1)}`);
 
-  
+  /*
+    ============ Operador Ternario ===================
+    Es el único operador de JavaScript que tiene 3 operandos.
+    Generalmente se usa como opción simplificada a la 
+    sentencia if-else.
+
+    Sintaxis:
+
+    condición ? expresionSiCondiciónEsVerdadera :  expresionSiCondicionEsFalsa;
+
+  */
+
+const subtotal = 1_000_000;
+const esFrontera = true;
+let total;
+
+if ( esFrontera )
+  total = subtotal * 1.08
+else
+  total = subtotal * 1.16
+
+console.log(`El total es ${total}`);
+
+// Aplicando el operador ternario
+const totalConIVA = esFrontera ? subtotal * 1.08 : subtotal * 1.16;
+console.log(`Operador ternario ${ totalConIVA }`);
+
+// Reducción con el operador ternario
+console.log(`Total : ${ subtotal * (esFrontera ? 1.08 : 1.16) }`);
+
+/*  
+  Evaluar la edad de una persona
+  Si la persona es igual o mayor a 18 : puede votar
+  En caso contrario: no puede votar
+
+*/
+
