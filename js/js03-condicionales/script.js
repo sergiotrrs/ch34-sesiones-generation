@@ -275,7 +275,8 @@ console.log(`Total : ${ subtotal * (esFrontera ? 1.08 : 1.16) }`);
 /*  
   Evaluar la edad de una persona
   Si la persona es igual o mayor a 18 : puede votar
-  En caso contrario: no puede votar
-
+  En caso contrario: no puede votar.
 */
+const edad = 18;
+console.log(`Tu ${edad >= 18 ? "puedes votar" : "no puedes votar"}`);
 
