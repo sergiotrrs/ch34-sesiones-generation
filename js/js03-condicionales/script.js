@@ -280,3 +280,6 @@ console.log(`Total : ${ subtotal * (esFrontera ? 1.08 : 1.16) }`);
 const edad = 18;
 console.log(`Tu ${edad >= 18 ? "puedes votar" : "no puedes votar"}`);
 
+const mayorEdad = 'sí';
+const menorEdad = 'no';
+console.log(`Tu edad es: ${edad} y ${ edad >= 18 ? mayorEdad : menorEdad} puedes votar.`);
