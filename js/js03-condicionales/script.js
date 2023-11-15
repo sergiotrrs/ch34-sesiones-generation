@@ -165,5 +165,38 @@ console.log( mensaje );
   Imprimir reprobado fuera de esos números
 
   Realizarlo con switch dentro de una función.
+
+*/
+
+
+const califica = ( number ) =>{
+    let message = "";
+    switch( number ){
+        case 10: 
+        case 9: 
+        case 8: 
+        case 7:
+            message = "aprobado";
+            break;
+        default:
+            message = "reprobado";
+    }
+    return  message;
+}
+
+console.log(`Persona con 9 : ${califica(9)}`); // aprobado
+console.log(`Persona con 7 : ${califica(7)}`); // aprobado
+console.log(`Persona con 5 : ${califica(5)}`); // reprobado
+
+// =====================================================
+/*
+ Realizar dos funciones, una usando switch y otra con if-else if-else
   
+ Donde verifique el mes del 1 al 12 y despliegue la estación del año.
+
+ mes 12 , 1, 2 = Invierno
+ mes 3, 4, 5 = Primavera
+ mes 6, 7, 8 = Verano
+ mes 9, 10, 11 = Otoño
+
 */
