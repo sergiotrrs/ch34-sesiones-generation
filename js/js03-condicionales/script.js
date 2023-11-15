@@ -200,3 +200,46 @@ console.log(`Persona con 5 : ${califica(5)}`); // reprobado
  mes 9, 10, 11 = Otoño
 
 */
+const mesSwitch = (numMes) => {
+    let = message = "";
+    switch (numMes) {
+      case 12: case 1: case 2:
+        message = "Invierno";
+        break;
+      case 3:  case 4: case 5:
+        message = "Primavera";
+        break;
+      case 6: case 7: case 8:
+        message = "Verano";
+        break;
+      case 9: case 10: case 11:
+        message = "Otoño";
+        break;
+      default:
+        message = "Mes no valido";
+    }
+    return message;
+  };
+  console.log(`Estacion del año (Switch): ${mesSwitch(5)}`);
+
+  // ==============================================
+  const mesIf = (numMes) => {
+    let message = "";
+
+    if (numMes === 1 || numMes === 2 || numMes === 12) {
+      message = "Invierno"; // return "invierno"
+    } else if (numMes >= 3 && numMes <= 5) {
+      message = "Primavera"; // return "primavera"
+    } else if (numMes >= 6 && numMes <= 8) {
+      message = "Verano";
+    } else if (numMes >= 9 && numMes <= 11) {
+      message = "Otoño";
+    } else {
+      message = "Mes No Valido";
+    }
+
+    return message;
+  };
+  console.log(`Estacion del año (if): ${mesIf(1)}`);
+
+  
