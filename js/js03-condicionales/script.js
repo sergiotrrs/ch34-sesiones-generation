@@ -110,4 +110,60 @@ else if (color === "azul") mensaje = "color azul";
 else mensaje = "No tengo el color registrado";
         
     
+/*
+ ================ Sentecia Switch ===================
+  La sentencia Switch evalua una expresió y se compara
+  con el valor de cada instancia en "case" y se ejecuta las
+  sentenicas asociadas a ese "case" hasta que se ecuentre
+  la sentencia break o que finalice el Switch.
 
+  La evaluación es estricta ( === ).
+
+  Sintaxis:
+   switch( expresión ) {
+     case valor1:
+        sentecias;
+        break;
+     case valor2:
+        sentencias;
+        break;
+     case valorN:
+        sentencias;
+        break;
+     default:
+        sentencias;
+        break;
+   }
+
+*/
+
+const person = "Sergio";
+mensaje = "";
+
+switch ( person ) {
+    case "Sergio":
+        mensaje = "Hola Sergio, instructor";
+        break;
+    case "Tony":
+        mensaje = "Ey, Tony";
+        console.log("Estoy atendiendo a Tony");
+        break;
+    case "Gaby":
+        mensaje = "Hola, Gaby";
+        break;
+    default:
+        mensaje = "persona desconocida";
+       
+}
+// return mensaje;
+
+console.log( mensaje );
+
+//====================================================
+/*
+  Imprimir aprobado si la calificación es 7,8,9,10
+  Imprimir reprobado fuera de esos números
+
+  Realizarlo con switch dentro de una función.
+  
+*/
