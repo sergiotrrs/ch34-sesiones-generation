@@ -98,10 +98,41 @@ console.log( "numero ", numero); // 14
 // ------ Ejercicio -------------
 
 let x = 3;
-
 let y = ++x;  // x: 4, y: 4
 
 console.log(`x: ${x++} y: ${++y}`); //  x: 4,  y: 5    
                                     //  x: 5,  y: 5
 
 console.log(`x: ${x} y: ${y}`);     //  x: 5,  y: 5
+
+// ==============================================
+let x1 = 3;
+let y1 = x1++; //  x: 3   y: 3
+               //  x: 4   y: 3
+
+console.log(`x1: ${x1++} y1: ${++y1}`); // x: 4 , y: 4
+                                        // x: 5 , y: 4
+console.log(`x1: ${x1} y1: ${y1}`);     // x: 5 , y: 4   
+
+
+let a=2; 
+let b="2"; 
+console.log(a++ + -  +b  ); // 0
+
+// ==============================================
+
+x= 2;
+y= "2";
+console.log(x++     +     -   +y); // 0
+console.log(x); // 3
+console.log(y); // "2"
+
+// ---------------- Conparación estricta
+/*
+  === estrictamente igual, debe ser igual en el valor y el tipo
+  !== estrictamente diferente, debe ser diferente el valor y tipo
+
+*/
+
+console.log( "23" == 23  ); // true
+console.log( "23" === 23  ); // false 
