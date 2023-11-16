@@ -46,3 +46,14 @@ console.log( equiposIntegrador[2][3] ); // Sebas
 console.log( equiposIntegrador[0][1] ); // Mirta
 // Arlene
 console.log( equiposIntegrador[2][5] ); // Arlene 
+
+// ================= Iterar un arreglo ================
+// Mostrar en consola todas las personas de los proyectos
+// usando ciclo for
+/*
+const equiposIntegrador = [     
+    ["Misael", "Mirta" , "Jocelyn", "Jorge" , "Yaz"     , "Tony"   , "Itzel" ] , 
+    ["Chino" , "Victor", "Nalle"  , "Lili"  , "Fernanda", "Cinthia" ] , 
+    ["Gaby"  , "Charly", "Alan"   , "Sebas" , "Andrew"  , "Arlene" , "Arely"]  
+];
+*/
