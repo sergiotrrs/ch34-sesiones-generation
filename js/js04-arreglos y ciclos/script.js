@@ -171,21 +171,102 @@ for (   ;   ;   ){
 }
 
 // ==========================================
-let y = 0;
-for (  ;   ; y++  ){
-    console.log("y: " + y); // 0,1,2,3,4,5,6
+
+for ( let y = 0;    ; y++  ){
     if( y >= 6 ) break;
+    console.log("y: " + y ); // 0,1,2,3,4,5    
 }
 
-console.log( y ); // excepción, y no está definida
+// console.log( y ); // excepción, y no está definida
 
 // qué números imprime la línea 160? 
 
 
+for (let x = 0; x <= 6; x++) {
+    console.log("x de Monse: " + x); // solo imprimirí: 0
+    break;
+}
+
+
+
  // =================== ciclo While ====================
  /*
-   Crea un bucle que ejecuta una sentenncia
+   Crea un bucle que ejecuta una sentencia
+   mientras la condición especificada sea verdadera
 
+   Sintaxis:
+   while( condición) sentencia;
+
+   while( condición ){
+    sentencias;
+   }
 
  */
+/*   let counter = 1;
+   while(  confirm("¿Quieres cotinuar?") ){
+        console.log(`Num. de veces que has entrado: ${counter}`);
+        counter++;
+   }
+ */
+   
+   //
+   const nombreMascotas = [ "Junior", "Tomy", "Fify", "Canela", "Pelusa", "Freya", "Nana", "Cuco"];
 
+   // Imprimir los nombres de las mascotas, y detenerse cuando se encuentre a "Canela"
+   // Resolver utilizando ciclo While
+   // No se imprime a Canela
+
+   const imprimirMascotasHastaLlegarA = (mascotas, mascotaAEncontrar) => {
+    let i = 0;
+    while( mascotas[i] !== mascotaAEncontrar ) {
+      console.log(mascotas[i]);
+      i++;
+    }
+  }
+  
+  imprimirMascotasHastaLlegarA (nombreMascotas,"Canela");
+
+// =================== ciclo do-while ====================
+/*
+  Crea un bucle que ejecuta una sentencia hasta que la
+  condición de comprobación se evalue como falsa.
+
+  La condición se evalua después de ejecutar la sentencia.
+  Esto significa que la sentencia se ejecuta por lo menos una vez.
+
+  sintaxis:
+
+  do {
+    sentencia;
+  } while( evalución );
+
+*/
+
+/* let counter = 0;
+
+do {
+    counter++;
+    console.log(`N. iteración: ${counter}`)
+
+} while( confirm("¿Deseas continuar?") );
+ */
+
+// ====================================
+
+
+let valor = -2;
+while ( valor < 5) {
+    console.log("While " + valor ); // -2... 4
+    valor ++;
+}
+
+valor = 4;
+do {
+    console.log("Do-While " + valor ); // 4
+    valor ++;
+} while ( valor < 5);
+
+/*
+FIFO: first input, first output
+LIFO: last input, first output
+*/
