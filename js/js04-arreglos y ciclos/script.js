@@ -133,6 +133,7 @@ const matrix = [
 console.log("======= uso de break y label======")
 rompeMatriz:
 for (let row of matrix ){
+    rompeFila:
    for ( let column of row){
     console.log( column );
     if( column === 6 ) break rompeMatriz;
@@ -143,9 +144,48 @@ for (let row of matrix ){
 console.log("======= imprimir excepto el 6 ======")
 for (let row of matrix ){
     for ( let column of row){
-     if (column !== 6){
-        console.log(column);   
-        console.log("Muchas instrucciones");
-     }    
+     if (column === 6) continue;
+     console.log(column);                  
     }
  }
+
+ const ages = [18,34,55];
+ for (let index = 0; index < ages.length; index++) console.log( ages[index]);
+
+// prueba chiquita
+ let jiteracion = 0;
+ for( ; jiteracion < 5; jiteracion++ )/*instrucciones de for */   //<--- Ojo
+ {
+     console.log(jiteracion); // 0,1,2,3,4
+ };
+ console.log(jiteracion); // 5
+ console.log("Fin de jiteración"); // "Fin de jiteración""
+
+// for sin elemento internos
+let x = 0;
+
+for (   ;   ;   ){
+    console.log("x: " + x);
+    if( x >= 6 ) break;
+    x++;
+}
+
+// ==========================================
+let y = 0;
+for (  ;   ; y++  ){
+    console.log("y: " + y); // 0,1,2,3,4,5,6
+    if( y >= 6 ) break;
+}
+
+console.log( y ); // excepción, y no está definida
+
+// qué números imprime la línea 160? 
+
+
+ // =================== ciclo While ====================
+ /*
+   Crea un bucle que ejecuta una sentenncia
+
+
+ */
+
