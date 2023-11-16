@@ -98,6 +98,10 @@ console.log( "numero ", numero); // 14
 // ------ Ejercicio -------------
 
 let x = 3;
-let y = ++x;
-console.log(`x: ${x++} y: ${++y}`); //
-console.log(`x: ${x} y: ${y}`);  // 
+
+let y = ++x;  // x: 4, y: 4
+
+console.log(`x: ${x++} y: ${++y}`); //  x: 4,  y: 5    
+                                    //  x: 5,  y: 5
+
+console.log(`x: ${x} y: ${y}`);     //  x: 5,  y: 5
