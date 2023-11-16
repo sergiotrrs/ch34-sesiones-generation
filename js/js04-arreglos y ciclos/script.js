@@ -122,4 +122,30 @@ for (let number of numbers ){
     if( number === 8 ) break;
 }
 
-const matrix = [ [2,4,6], [6,8,9], [2,6,8,3] ];
+const matrix = [ 
+    [2     ,4  ,6  ,999], 
+    [10_000,6  ,8  ,9  ], 
+    [2     ,6  ,8  ,3  ] 
+];
+// Detener la iteración cuando encontremos un 6, no mostrar más números
+// label: indicar que ciclo romperá el break
+
+console.log("======= uso de break y label======")
+rompeMatriz:
+for (let row of matrix ){
+   for ( let column of row){
+    console.log( column );
+    if( column === 6 ) break rompeMatriz;
+   }
+}
+
+// Imprimir todos los elementos excepto el 6(de cualquier fila)
+console.log("======= imprimir excepto el 6 ======")
+for (let row of matrix ){
+    for ( let column of row){
+     if (column !== 6){
+        console.log(column);   
+        console.log("Muchas instrucciones");
+     }    
+    }
+ }
