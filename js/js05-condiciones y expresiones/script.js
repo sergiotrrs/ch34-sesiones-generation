@@ -127,7 +127,7 @@ console.log(x++     +     -   +y); // 0
 console.log(x); // 3
 console.log(y); // "2"
 
-// ---------------- Conparación estricta
+// ---------------- Comparación estricta
 /*
   === estrictamente igual, debe ser igual en el valor y el tipo
   !== estrictamente diferente, debe ser diferente el valor y tipo
@@ -136,3 +136,46 @@ console.log(y); // "2"
 
 console.log( "23" == 23  ); // true
 console.log( "23" === 23  ); // false 
+
+// ----------------- Operadores de comparación --------------
+/*
+  Comparar sus operandos  y devuelve un calor booleano.
+
+  < menor que
+  > mayor que
+  <= menor igual que
+  >= mayor igual que
+  == igual
+
+  Estos comparadores realizan una conversión implícita a numéricos
+  cuando los operandos son de diferente tipo de dato.
+
+  En el caso de que los dos operandos sean string, con los comparadores
+  <, >, >=, <= se compara caracter por caracter con su valor númerico
+  de la tabla unicode.
+
+*/
+
+console.log( 3 == "3" ); // true
+console.log( 3 == "tres" ); // false
+
+console.log( "Veinte" > "20" ); // true
+            // 86     >   50   posición del caracter en la tabla Unicode
+console.log( "Veinte" > 20 ); // false
+
+// ============= ejercicios ================
+
+
+console.log( true == "true"  );  //
+
+console.log(  23 < "40" );       // 
+
+console.log(  "b" < "A" );       // 
+
+console.log(  "Hola" < "HOLA");  // 
+          
+console.log(  "Hola" < "123");   //
+      
+console.log(  "Hola" < "KeHace" + 1000 ); // 
+
+console.log(  "23" == 23  ); // 
