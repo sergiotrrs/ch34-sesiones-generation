@@ -154,6 +154,11 @@ console.log( "23" === 23  ); // false
   <, >, >=, <= se compara caracter por caracter con su valor númerico
   de la tabla unicode.
 
+  Valos en tabla unicode:
+   Números
+   Mayúsculas
+   Minúsculas
+
 */
 
 console.log( 3 == "3" ); // true
@@ -166,16 +171,25 @@ console.log( "Veinte" > 20 ); // false
 // ============= ejercicios ================
 
 
-console.log( true == "true"  );  //
+console.log( true == "true"  );  // false
+         //    1  == NaN
 
-console.log(  23 < "40" );       // 
+console.log(  23 < "40" );       // true
 
-console.log(  "b" < "A" );       // 
+console.log(  "b" < "A" );       // false 
+          //  98  <  65 
 
-console.log(  "Hola" < "HOLA");  // 
-          
-console.log(  "Hola" < "123");   //
-      
-console.log(  "Hola" < "KeHace" + 1000 ); // 
+console.log(  "Hola" < "HOLA");  // false
+          // 101(o)  <  79(O)        
 
-console.log(  "23" == 23  ); // 
+console.log(  "Hola" < "123");   // false
+          //   72(H) <  49(1)
+
+console.log(  "Hola" < "KeHace" + 1000 ); // true
+         //          9          11         prioridad    
+         //   "Hola" < "KeHace1000"  
+         //    72(H) <  75(K)   
+
+console.log(  "23" == 23  ); // true
+
+
