@@ -193,3 +193,61 @@ console.log(  "Hola" < "KeHace" + 1000 ); // true
 console.log(  "23" == 23  ); // true
 
 
+// --------------- Operadores lógicos AND (&&) y OR (||)
+
+const valueA = true, valueB = false, valueC = true;
+// const valueB = false;
+// const valueC = true;
+// const valueX = valueY = valueZ = true; <- Y y Z con declaradas con 'var'
+
+console.log( valueA || valueB && valueC ); // true
+          //        3          4        prioridad de operadores
+          // valueA ||     false   
+          //   true ||     false
+          //        true
+
+// Operadores de corto circuito
+/*
+  Cuando los operadores lógicos AND y OR actuan sobre operandos
+  diferentes a booleanos.
+ 
+  OP1 && OP2 -> Si OP1 es verdadero, se realiza la OP2 y este sería el resultado (OP2)
+  OP1 || OP2 -> Si OP1 es verdadero, el resultado es OP1, no se evalua OP2
+
+  Se considera falso: "", 0, NaN, null, undefined
+
+*/
+
+
+const varA = true;
+const varB = false;
+const varC = true;
+// OP1 && OP2    Si OP1 es verdadero, se ejecuta OP2
+console.log( varA && "Ya te la sabes" ); // Ya te la sabes
+console.log( varB && "Cámara, pivote y llanta" ); // false
+console.log( NaN && "Cámara, llanta y rin, mi Cheko"  ); // NaN
+console.log( "" && "Arre, carnal, gracias" ); // ""
+
+// OP1 || OP2    Si OP1 es verdadero, se ejecuta OP 1
+console.log( "false" || "Simona la mona" ); // "false"
+console.log( varA || "Ya te la sabes" ); // true
+console.log( varB || "Cámara, pivote y llanta" ); // "Cámara, pivote y llanta" 
+console.log( NaN  || "Cámara, llanta y rin, mi Cheko" ); // "Cámara, llanta y rin, mi Cheko"
+
+// Quiero imprimir  "Te la rifas" Si la
+// variable isOnline y isActive son true
+const isOnline = false;
+const isActive = true;
+
+if ( isOnline ){
+  if( isActive ){
+    console.log("Te la rifas ");
+  }
+}
+
+if ( isOnline && isActive ) console.log("Te la rifas");
+
+// Solución utilizando solo operados lógicos
+console.log(isOnline && isActive && "Te la rifas");
+
+isActive && isOnline && console.log("Te la rifas");
