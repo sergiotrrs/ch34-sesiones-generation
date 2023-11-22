@@ -68,14 +68,24 @@ console.log("====== Asíncrono =====");
 
 // ------------------------- setInterval ------------------------
 // Ejecuta una función de manera reiterada con un tiempo de retardo fijo
+// setInterval retorna un ID del itervalo ejecutado
 
 const startInterval = document.getElementById("startInterval");
 const stopInterval = document.getElementById("stopInterval");
 const counterRef = document.getElementById("counter");
 let counter = 0;
+let intervalId;
 
 startInterval.addEventListener( "click" , (event)=>{
-
-    setInterval( () => console.log( ++counter ), 1000 );
+    intervalId = setInterval( () => console.log( ++counter ), 1000 );
+    console.log("interval ID: ", intervalId );
+    // TODO deshabilitar el botón start
 } );
+
+stopInterval.addEventListener( "click", () =>{
+    // Detener el intervalo
+    clearInterval(  intervalId  );
+});
+
+
 
