@@ -62,5 +62,34 @@ console.log("Después de consumir la promesa");
 // =======================================
 
 const greeting = ( name ) =>{
-    
+
+    // const myPromise = new Promise( ()=>{} );
+    const myPromise = new Promise( ( resolve, reject )=>{
+        // saludar a la persona pero:
+        // si su nombre comienza con A, retardar 5 s.
+        // si comienza co G, retardar 2 s.
+        // caso contrario, rechazar la promesa
+        if( name.charAt(0) === 'a' || name.charAt(0) === 'A')
+             setTimeout( ()=>resolve(`Hola ${name}`) , 5000  );
+        else if( name.charAt(0).toLowerCase() === 'g'  )
+            setTimeout( ()=>resolve(`Hi ${name}`)   , 2000 );
+        else
+            reject( `Te vi, pero te ignoré ${name} `);
+    } );
+
+    return myPromise;
 }
+
+// greeting("Antonio").then().catch().finally();
+greeting("Antonio")
+ .then( response => console.log( response ))
+ .catch( error => console.log(error ));
+ 
+ greeting("Gaby")
+ .then( response => console.log( response ))
+ .catch( error => console.log(error ));
+ 
+greeting("Sergio")
+ .then( response => console.log( response ))
+ .catch( error => console.log(error ));
+ 
