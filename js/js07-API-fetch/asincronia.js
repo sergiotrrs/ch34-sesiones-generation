@@ -72,20 +72,52 @@ console.log("====== Asíncrono =====");
 
 const startInterval = document.getElementById("startInterval");
 const stopInterval = document.getElementById("stopInterval");
+const resetInterval = document.getElementById("resetInterval");
 const counterRef = document.getElementById("counter");
 let counter = 0;
 let intervalId;
 
 startInterval.addEventListener( "click" , (event)=>{
-    intervalId = setInterval( () => console.log( ++counter ), 1000 );
+    intervalId = setInterval( () => mostrarEnHtml(++counter), 1000 );
     console.log("interval ID: ", intervalId );
-    // TODO deshabilitar el botón start
+    disableStartButton(true);
+    disableStopButton(false);
+    disableResetButton(true)
 } );
+
+const mostrarEnHtml = (valor) => {
+    document.getElementById("counter").innerHTML = valor;
+    console.log(valor);
+}
 
 stopInterval.addEventListener( "click", () =>{
     // Detener el intervalo
     clearInterval(  intervalId  );
+    disableStartButton(false);
+    disableStopButton(true);
+    disableResetButton(false)
+});
+
+resetInterval.addEventListener( "click", () =>{
+ counter = 0;
+ mostrarEnHtml( 0 );
 });
 
 
+const disableStartButton = ( value ) => {
+    startInterval.disabled = value;
+}
 
+const disableStopButton = ( value ) => {
+    stopInterval.disabled = value;
+}
+
+const disableResetButton = ( value ) => {
+    resetInterval.disabled = value;
+}
+
+( function(){
+    disableStartButton( false);
+    disableStopButton(true);
+    disableResetButton(true);
+} )();
