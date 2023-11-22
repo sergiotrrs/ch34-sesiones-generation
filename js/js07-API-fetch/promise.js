@@ -117,7 +117,7 @@ const greettingAll = async () => {
  * código en el bloque catch(){} pero no detiene la ejecución
  * de las otras funciones asíncronas.
  */
-const greettingAllTryCatch = async () => {
+const greettingTryCatch = async () => {
   try {
     await greetingCh34("Luis");
   } catch (error) {
@@ -148,4 +148,4 @@ const greettingAllUsingTryCatch = async () => {
 
 // greettingAll();
 // greettingAllUsingTryCatch();
-greettingAllTryCatch();
+greettingTryCatch();
