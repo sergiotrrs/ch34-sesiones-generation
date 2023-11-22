@@ -112,8 +112,9 @@ const disableStopButton = ( value ) => {
     stopInterval.disabled = value;
 }
 
-const disableResetButton = ( value ) => {
+const disableResetButton = ( value ) => {    
     resetInterval.disabled = value;
+    resetInterval.style.display = value ? "none" : "inline";
 }
 
 ( function(){
