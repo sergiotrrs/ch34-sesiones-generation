@@ -44,5 +44,18 @@ getProducts(urlFakeStore);
 
 function imprimirEnDOM( products) {
    const productsContainer = document.getElementById("products-container");
-   productsContainer.innerHTML = `<h2>productos electrónicos</h2>`;
+
+   // solución 1
+   const myArrayOfTitle = [];
+   products.forEach( (element, idex, array )=>{ myArrayOfTitle.push( `<p>${ element.title }</p>` )}  ); 
+
+   // solución 2
+   // products.map( (element, idex, array )=>{}  ); 
+   const productsTitle = products.map( (product, index, array)=> `<p>${ product.title }</p>` );
+   
+   console.log( myArrayOfTitle );
+   console.log( productsTitle );
+
+   productsContainer.innerHTML =  productsTitle.join("");
+   // productsContainer.innerHTML =   myArrayOfTitle.join("");
 }
