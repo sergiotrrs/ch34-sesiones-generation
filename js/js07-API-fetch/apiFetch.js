@@ -29,7 +29,10 @@ const getProducts = (url) => {
       console.log("status code: " + response.status); // 200
       return response.json();
     })
-    .then( products => console.log(products)   )
+    .then( products => {
+      // console.log(products); 
+      imprimirEnDOM( products );
+   } )
     .catch((error) => {
       console.log("Error en la solicitud: ");
       console.warn(error);
@@ -37,3 +40,9 @@ const getProducts = (url) => {
 };
 
 getProducts(urlFakeStore);
+
+
+function imprimirEnDOM( products) {
+   const productsContainer = document.getElementById("products-container");
+   productsContainer.innerHTML = `<h2>productos electrónicos</h2>`;
+}
