@@ -18,7 +18,8 @@ en comparación con métodos más antiguos, como XMLHttpRequest.
 
 */
 
-const urlFakeStore = "https://fakestoreapi.com/products";
+// const urlFakeStore = "https://fakestoreapi.com/products";
+const urlFakeStore = "./pokemones.json";
 
 const getProducts = (url) => {
   // Realizando solicitud Get
@@ -53,8 +54,8 @@ function imprimirEnDOM( products) {
    // products.map( (element, idex, array )=>{}  ); 
    const productsTitle = products.map( (product, index, array)=> `
       <article class="col-sm-6 col-lg-3" >
-        <div class="card mx-auto" style="width: 13rem;">
-         <img src="${ product.image }" class="card-img-top" alt="...">
+        <div class="card mx-auto mb-2" style="min-height: 50rem;">
+         <img src="${ product.image }" class="card-img-top" alt="..." >         
          <div class="card-body">
            <h5 class="card-title">${ product.title  }</h5>
            <p class="card-text"> ${ product.description  }</p>
