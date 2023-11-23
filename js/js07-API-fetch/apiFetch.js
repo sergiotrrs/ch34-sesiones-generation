@@ -40,7 +40,20 @@ const getProducts = (url) => {
     });
 };
 
-getProducts(urlFakeStore);
+const getProductsUsingAsyncAwait = async ( url ) => {
+   try {
+      const response = await fetch(url);
+      const products = await response.json();
+      imprimirEnDOM( products );   
+      
+   } catch (error) {
+      console.log( error );
+   }
+
+}
+
+// getProducts(urlFakeStore);
+getProductsUsingAsyncAwait(urlFakeStore);
 
 
 function imprimirEnDOM( products) {
