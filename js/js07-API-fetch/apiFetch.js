@@ -27,13 +27,11 @@ const getProducts = (url) => {
   fetch(url)
     .then((response) => {
       console.log("status code: " + response.status); // 200
-      response.json()
-       .then(  products=> console.log(products)   )
-       .catch( error => console.log("Error en la conversión" + error));
-
+      return response.json();
     })
+    .then( products => console.log(products)   )
     .catch((error) => {
-      console.log("Error en la solicitud GET");
+      console.log("Error en la solicitud: ");
       console.warn(error);
     });
 };
