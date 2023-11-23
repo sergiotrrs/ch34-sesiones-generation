@@ -20,18 +20,22 @@ en comparación con métodos más antiguos, como XMLHttpRequest.
 
 const urlFakeStore = "https://fakestoreapi.com/products";
 
-const getProducts = ( url ) =>{
-    // Realizando solicitud Get
-    // .then() consume la promesa cuando sea resuelta
-    // .catch() se ejecuta en caso de que la promesa sea rechazada.
-    fetch( urlFakeStore )
-     .then(  (response)=>{ 
-        console.log(response);
-        return response.json(); // promesa coversión de JSON a Object
-     })
-     .then( (products) =>{
-        console.log(products);
-     })
-}
+const getProducts = (url) => {
+  // Realizando solicitud Get
+  // .then() consum/maneja la promesa cuando sea resuelta
+  // .catch() se ejecuta en caso de que la promesa sea rechazada.
+  fetch(url)
+    .then((response) => {
+      console.log("status code: " + response.status); // 200
+      response.json()
+       .then(  products=> console.log(products)   )
+       .catch( error => console.log("Error en la conversión" + error));
 
-// getProducts( urlFakeStore );
+    })
+    .catch((error) => {
+      console.log("Error en la solicitud GET");
+      console.warn(error);
+    });
+};
+
+getProducts(urlFakeStore);
