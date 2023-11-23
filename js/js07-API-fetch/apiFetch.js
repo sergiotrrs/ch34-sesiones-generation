@@ -51,7 +51,19 @@ function imprimirEnDOM( products) {
 
    // solución 2
    // products.map( (element, idex, array )=>{}  ); 
-   const productsTitle = products.map( (product, index, array)=> `<p>${ product.title }</p>` );
+   const productsTitle = products.map( (product, index, array)=> `
+      <article>
+        <div class="card" style="width: 18rem;">
+         <img src="${ product.image }" class="card-img-top" alt="...">
+         <div class="card-body">
+           <h5 class="card-title">${ product.title  }</h5>
+           <p class="card-text"> ${ product.description  }</p>
+           <a href="#" class="btn btn-primary">Go somewhere</a>
+         </div>
+        </div>          
+      </article>
+   ` 
+   );
    
    console.log( myArrayOfTitle );
    console.log( productsTitle );
