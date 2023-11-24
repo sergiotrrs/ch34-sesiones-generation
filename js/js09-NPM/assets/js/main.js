@@ -22,5 +22,40 @@ const getUsersUsingAxios = async ( url ) => {
     }
 }
 
+const postUsingAxios = async (  ) =>{
+   const url = "https://reqres.in/api/users";
+   const user = {
+     name: "Aldo",
+     job: "Developer Ch35"
+   }
+
+   const response = await axios.post( url, user );
+   console.log( response.data );
+}
+
+const postUsingFetch = async (  ) =>{
+    const url = "https://reqres.in/api/users";
+    const user = {
+      name: "Aldo",
+      job: "Developer Ch35"
+    }
+ 
+    const response = await fetch( url, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+ 
+        },
+        body: JSON.stringify(user), // body data type must match "Content-Type" header
+      });
+    const newUser = await response.json();
+    console.log( "Fetch" , newUser );
+ }
+ 
+
+
 getUsersUsingFetch( url );
 getUsersUsingAxios( url );
+
+postUsingAxios();
+postUsingFetch();
