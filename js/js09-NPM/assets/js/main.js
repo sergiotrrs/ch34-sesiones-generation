@@ -13,4 +13,14 @@ const getUsersUsingFetch = async ( url ) => {
   }
 }
 
+const getUsersUsingAxios = async ( url ) => {
+    try {
+     const users = await axios.get( url );
+     console.log( users.data );        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 getUsersUsingFetch( url );
+getUsersUsingAxios( url );
