@@ -22,8 +22,11 @@ getProductsUsingAsyncAwait(urlFakeStore);
 function imprimirEnDOM( products) {
    const productsContainer = document.getElementById("products-container");
    
+  // const productsTitle = products.map( 
+  //    ( {image, title, description})=> new Card(image,title, description).basicCard() );
+  
    const productsTitle = products.map( 
-      ( {image, title, description})=> new Card(image,title, description).basicCard() );
+      ( product )=>  new Card( product.image, product.title, product.description).cardTitle() );
   
    productsContainer.innerHTML =  productsTitle.join("");
 }

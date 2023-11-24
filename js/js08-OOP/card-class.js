@@ -36,7 +36,7 @@ class Card {
          <div class="card-body">
            <h5 class="card-title">${ this.#title  }</h5>
            <p class="card-text"> ${ this.#description  }</p>
-           <a href="#" class="btn btn-primary">Go somewhere</a>
+           <a href="#" class="btn btn-success">Go somewhere</a>
          </div>
         </div>          
       </article>
@@ -45,8 +45,8 @@ class Card {
 
     cardTitle(){
        return `
-        <article class="col-sm-6 col-lg-3" >
-            <div class="card" style="width: 18rem;">
+        <article class="col-sm-4 col-lg-2" >
+            <div class="card" >
                 <div class="card-body">
                     <h5 class="card-title">${this.#title}</h5>
                     <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
@@ -60,5 +60,6 @@ class Card {
 
 }
 
+const numCohorte = 34;
 // exportar las clases, funciones, variables, etc.
-export { Card }; 
+export { Card, numCohorte }; 
