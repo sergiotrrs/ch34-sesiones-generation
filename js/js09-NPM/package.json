@@ -1,0 +1,27 @@
+{
+  "name": "js09-npm",
+  "version": "0.0.1",
+  "description": "Sesión js09 uso de NPM",
+  "main": "./assets/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiotrrs/ch34-sesiones-generation.git#main"
+  },
+  "keywords": [
+    "NPM",
+    "AXIOS",
+    "FETCH"
+  ],
+  "author": "Sergio T.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiotrrs/ch34-sesiones-generation/issues"
+  },
+  "homepage": "https://github.com/sergiotrrs/ch34-sesiones-generation/tree/main#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
