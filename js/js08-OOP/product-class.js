@@ -84,3 +84,5 @@ class Producto {
     }
   
   }
+
+  export { Producto, Top };

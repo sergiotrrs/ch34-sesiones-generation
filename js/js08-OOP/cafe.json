@@ -1,0 +1,16 @@
+[
+    {
+        "UUID": 1,
+        "nombre": "Punta de Cielo",
+        "precio": 109.95,
+        "marcaComercial": "Punta de cielo Nescafé"
+
+    },
+    {
+        "UUID": 1,
+        "nombre": "Café Colombiano",
+        "precio": 109.95,
+        "marcaComercial": "Café colombiano de altura"
+
+    }
+]
