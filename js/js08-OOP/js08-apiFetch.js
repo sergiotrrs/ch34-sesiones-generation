@@ -2,7 +2,8 @@ console.log("JS07 - apiFetch");
 import { Card } from "./card-class.js";
 import { Producto } from "./product-class.js";
 
-const urlFakeStore = "https://fakestoreapi.com/products";
+// const urlFakeStore = "https://fakestoreapi.com/products";
+const urlFakeStore = "./cafe.json";
 
 const getProductsUsingAsyncAwait = async ( url ) => {
    try {
@@ -11,10 +12,10 @@ const getProductsUsingAsyncAwait = async ( url ) => {
 
       // Crear un arreglo de OBJETOS de productos
       const productsObj = products.map( product => new Producto(
-         product.id,
-         product.title,
-         product.price,
-         product.title
+         product.UUID,
+         product.nombre,
+         product.precio,
+         product.marcaComercial
        ));
 
       imprimirEnDOM( productsObj );   
