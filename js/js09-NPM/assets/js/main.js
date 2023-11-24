@@ -7,13 +7,10 @@ const getUsersUsingFetch = async ( url ) => {
   try {
     const response = await fetch(url);
     const users = await response.json();
-
     console.log( users);
-
   } catch (error) {
     console.log(error);
   }
-
 }
 
 getUsersUsingFetch( url );
