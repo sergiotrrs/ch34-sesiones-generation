@@ -3,7 +3,8 @@ import { Card } from "./card-class.js";
 import { Producto } from "./product-class.js";
 
 // const urlFakeStore = "https://fakestoreapi.com/products";
-const urlFakeStore = "./cafe.json";
+// const urlFakeStore = "./cafe.json";
+const urlFakeStore = "https://rickandmortyapi.com/api/character";
 
 const getProductsUsingAsyncAwait = async ( url ) => {
    try {
@@ -11,11 +12,13 @@ const getProductsUsingAsyncAwait = async ( url ) => {
       const products = await response.json();
 
       // Crear un arreglo de OBJETOS de productos
-      const productsObj = products.map( product => new Producto(
-         product.UUID,
-         product.nombre,
-         product.precio,
-         product.marcaComercial
+      const productsObj = products.results.map( product => new Producto(
+         product.id,
+         product.name,
+         12.34,
+         product.status,
+         product.species,
+         product.image
        ));
 
       imprimirEnDOM( productsObj );   
@@ -40,7 +43,7 @@ function imprimirEnDOM( products) {
   //    ( {image, title, description})=> new Card(image,title, description).basicCard() );
   
    const productsTitle = products.map( 
-      ( product )=>  new Card( product.image, product.object, product.description).cardTitle() );
+      ( product )=>  new Card( product.image, product.object, product.description).basicCard() );
   
    productsContainer.innerHTML =  productsTitle.join("");
 }
