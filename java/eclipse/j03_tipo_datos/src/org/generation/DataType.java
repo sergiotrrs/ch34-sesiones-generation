@@ -159,7 +159,15 @@ public class DataType {
 		/*
 		 *  Conversión de tipo de datos
 		 */
+		byte coquita350ml = 60;
 		
+		// upcasting
+		short coquita2000ml = coquita350ml;
+		
+		short pozoleGrande1l = 259;
+		// downcastig
+		byte pozoleBurbuja = (byte)pozoleGrande1l;
+		System.out.println(pozoleBurbuja); // 3
 		
 	}
 
