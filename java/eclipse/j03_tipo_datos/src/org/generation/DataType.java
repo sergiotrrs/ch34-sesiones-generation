@@ -238,7 +238,30 @@ public class DataType {
 		System.out.println("Postdecremeto: " + valorInicial-- ); // 49
 		System.out.println("Valor final: " + valorInicial); // 48
 		
+		// Operadores Comparativos
+		// El resultado es un booleano
+		// <, <=, >, >=, == , !=
+		// System.out.println( 5 == "5" ); // No se puede comparar, hay que hacer una conversión
+		int numEmpleados = 1000;
+		System.out.println("Empleados > 1000 " + ( numEmpleados > 1000 ) ); // false
+		System.out.println("Empleados >= 1000 " + ( numEmpleados >= 1000 ) ); // true
+		System.out.println("Empleados <= 1000 " + ( numEmpleados <= 1000 ) ); // true  
+		System.out.println("Empleados == 1000 " + ( numEmpleados == 1000 ) ); // true
+		System.out.println("Empleados != 1000 " + ( numEmpleados != 1000 ) ); // false
 		
+		// Operadores lógicos
+		   // && (AND) retorna true si ambos operadores son true
+		   // || (OR) retorna true si cualquiera de los operandos es true
+		   // !  (NOT) invierte el resultado booleano
+		   boolean a = true;
+		   boolean b = false;
+		   boolean c = true;
+		   System.out.println( (a && b) || (a && c) );   // true
+		   System.out.println( a || b || c && a );       // true
+		   System.out.println( !(a || b) && (!a || c) ); // false	   	  
+		   System.out.println( a || b && c || a && b  ); // true
+		   
+		   // 45/0 -> Genera una excepción
 	}
 
 }
