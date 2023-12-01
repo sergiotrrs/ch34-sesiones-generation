@@ -169,6 +169,36 @@ public class DataType {
 		byte pozoleBurbuja = (byte)pozoleGrande1l;
 		System.out.println(pozoleBurbuja); // 3
 		
+		//====================================================
+		/*
+		 * Tipo de dato String
+		 * Es un objeto que se define con comillas dobles.
+		 * 
+		 * Si deseas imprimir comillas dobles,se usa el 
+		 * caracter de escape \
+		 *   \b backspace
+		 *   \t tab
+		 *   \n line feed
+		 *   \r carriage return
+		 *   \" double quote
+		 *   \' single quote
+		 *   \\ backslash
+		 */
+		String message = "No te metas en mi vida. "
+				+ "\n\tLa vida es como una caja de \"chocolate\"";
+		
+		System.out.println( message );
+		
+		// Convertir string a números
+		String edadMascotaStr = "8";		
+		System.out.println("Edad mascota + 1 : " + ( edadMascotaStr + 1  ) );
+		byte edadMascota = Byte.parseByte(edadMascotaStr);
+		
+		// Convertir números a String 
+		String numSuerte = String.valueOf( 123 );
+		System.out.println("Primer caracter de mi numSuerte " + numSuerte.charAt(0)  );
+		System.out.println("Número de dígitos: " + numSuerte.length() );
+		
 	}
 
 }
