@@ -120,6 +120,47 @@ public class DataType {
 		System.out.println("double Max Value: " + Double.MAX_VALUE ); // 1.7976931348623157E308
 		System.out.println("double Min Value: " + Double.MIN_VALUE ); // 4.9E-324
 		
+		/*
+		 *  Las literales de punto flotante son por default double
+		 *  ej. 123.567, 0.012, -0.989
+		 */
+		float myVarFloat = 1500.6523F;
+		
+		/*
+		 * Dato Boolean
+		 * Almacea valores true o false
+		 */
+		boolean myVarBoolea = true;
+		
+		/*
+		 * Dato char
+		 * Almacena un solo caracter.
+		 * Se debe definir la literal con apóstrofe ej. 'a', 'C', ' '
+		 * Solo alamacea caracteres de la tabla unicode(16 bits).
+		 * puede alacenar del 0 al 65535
+		 */
+		
+		char primeraLetraDeNombre = 'S';
+		// Se puede alacenar por su valor unicode
+		char letraL = '\u004C'; //L
+		// También se puede definir por su valor numérico
+		char letraM = 77;
+		System.out.println("Letra L : " + letraL );
+		System.out.println("Letra M : " + letraM );
+		
+		/*
+		 * Formas de representar un número
+		 */
+		System.out.println("Representación decimal: " + 34 );
+		System.out.println("Representación hexadecimal: " + 0x22 );
+		System.out.println("Representación binaria: " + 0b0010_0010 );
+		System.out.println("Representación octal: " + 042 );
+		
+		/*
+		 *  Conversión de tipo de datos
+		 */
+		
+		
 	}
 
 }
