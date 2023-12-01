@@ -198,6 +198,46 @@ public class DataType {
 		String numSuerte = String.valueOf( 123 );
 		System.out.println("Primer caracter de mi numSuerte " + numSuerte.charAt(0)  );
 		System.out.println("Número de dígitos: " + numSuerte.length() );
+	
+		// ==================================================================
+		// Operadores numéricos
+		int opA = (int)5.2;
+		int opB = 6;
+		int suma = opA + opB; // 11
+		System.out.println( suma );
+		int resta = opA - opB ; // -1
+		System.out.println(resta);
+		
+		int multiplica = (int)(opA * 1.1); // 5
+		double multiplicaDouble = opA * 1.1; // 5.5
+		System.out.println(multiplica);
+		
+		int division = opA /opB; // 0
+		System.out.println(division);
+		
+		// double divisionDouble = opA / opB; // 0.83333 -> trunca a int -> 0
+		// double divisionDouble = (double)opA / opB; // 0.8333333333333334
+		
+		 double divisionDouble = 1.0 * opA / opB; // 0.8333333333333334		 
+		// double divisionDouble = opA / opB * 1.0; // 0.0
+				
+		System.out.println(divisionDouble ); // 0.0
+		// opA = 5
+		int residuo = opA % 2; //1
+		System.out.println(residuo);
+		
+		// Operadores de pre incremento, post decremento
+		int valorInicial = 10;
+		
+		System.out.println("Preincremeto: " + ++valorInicial ); // 11
+		System.out.println("Postincremeto: " + valorInicial++ ); // 11
+		System.out.println("Valor final: " + valorInicial); // 12
+		
+		valorInicial = 50;
+		System.out.println("Predecremeto: " + --valorInicial ); // 49
+		System.out.println("Postdecremeto: " + valorInicial-- ); // 49
+		System.out.println("Valor final: " + valorInicial); // 48
+		
 		
 	}
 
