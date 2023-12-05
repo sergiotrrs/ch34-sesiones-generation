@@ -71,17 +71,29 @@ public class CondicionalIf {
 		Scanner myScan; 
 		myScan = new Scanner( System.in );
 		
-		System.out.print("Escribe tu nombre: ");		
-		String myName = myScan.nextLine(); // lee toda la línea hasta /n"		
-		System.out.println("Tu nombre es: " + myName);
+//		System.out.print("Escribe tu nombre: ");		
+//		String myName = myScan.nextLine(); // lee toda la línea hasta /n"		
+//		System.out.println("Tu nombre es: " + myName);
+//		
+//		System.out.print("Escribe una frase: ");		
+//		String frase = myScan.next(); // lee hasta el delimitador indicado		
+//		System.out.println("La primera palabra de la frase es: " + frase);
+//		myScan.nextLine(); // consumimos el resto de caracteres (\n) del buffer
+//		System.out.print("Escribe tu canción favorita: ");		
+//		String cancion = myScan.nextLine(); 		
+//		System.out.println("Tu canció es: " + cancion);
 		
-		System.out.print("Escribe una frase: ");		
-		String frase = myScan.next(); // lee hasta el delimitador indicado		
-		System.out.println("La primera palabra de la frase es: " + frase);
-		myScan.nextLine(); // consumimos el resto de caracteres (\n) del buffer
-		System.out.print("Escribe tu canción favorita: ");		
-		String cancion = myScan.nextLine(); 		
-		System.out.println("Tu canció es: " + cancion);
+		System.out.print("Dime tu número entero favorito :");
+		if( myScan.hasNextInt()  ) { // Verifica si existe un valor numérico entero
+			int number = myScan.nextInt();
+			System.out.println("Tu número favorito es: " + number);
+			
+		} else {
+			System.out.println("No introdujiste un número entero");
+		}
+		myScan.nextLine();	// limpiar el buffer		
+				
+		myScan.close();// liberar recursos
 	
 		
 
