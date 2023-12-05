@@ -84,6 +84,33 @@ public class CondicionalSwitch {
 			// 3, 4, 5 : primavera
 			// 6, 7, 8 : verano
 			// 9, 10, 11 : otoño
+			if(numeroMes == 12 || numeroMes == 1 || numeroMes == 2 ) {
+            	System.out.println("La estación es invierno");
+            }else if (numeroMes == 3 || numeroMes == 4 || numeroMes == 5 ) {
+            	System.out.println("La estación es primavera");
+            }else if (numeroMes == 6 || numeroMes == 7 || numeroMes == 8 ) {
+            	System.out.println("La estación es verano");
+            }else if(numeroMes == 9 || numeroMes == 10 || numeroMes == 11 ) {
+            	System.out.println("La estación es otoño");
+            } else {
+            	System.out.println("Número introducido incorrecto");
+            }
+			
+			String estacion;
+			switch(numeroMes) {
+			case 12, 1, 2:
+				estacion = "Invierno"; break;
+			case 3, 4, 5:
+				estacion = "Primavera"; break;
+			case 6, 7, 8:
+				estacion = "Verano"; break;
+			case 9, 10, 11:
+				estacion = "Otoño"; break;
+			default: 
+				estacion = "Mes incorrecto"; break;
+			}
+			System.out.println("La estación correspondiente es: " + estacion);
+			
 			
 			
 		} else {
