@@ -52,6 +52,13 @@ public class Pokemon {
     	return nombre + " come " + gramaje +" gr. de " + alimento;
     }
     
+    String pelear(Pokemon pokemon) {
+    	// TODO confrontar a los pokemones y enviar el mensaje del pokemon
+    	// ganador, el ganador es el que tenga mayor puntos de poder
+    	
+    	return null;    	
+    }
+    
     //metodos de clase
     static String nombreGenerico() {
         return nombreGenerico;
