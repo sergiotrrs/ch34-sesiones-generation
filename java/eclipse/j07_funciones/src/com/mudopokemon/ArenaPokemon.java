@@ -18,7 +18,8 @@ public class ArenaPokemon {
 		squirtle.tipo= "Agua";
 		
 		// Hacemos comer a Pikachu
-		pikachu.comer();
+		// pikachu.comer("bayas"); //imprime detro del método
+		System.out.println(pikachu.comer("bayas", 100));
 		
 		// Hacemos dormir a Charmander
 		charmander.dormir();

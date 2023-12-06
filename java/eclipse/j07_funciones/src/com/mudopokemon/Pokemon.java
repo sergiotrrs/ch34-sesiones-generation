@@ -49,7 +49,7 @@ public class Pokemon {
      * @return
      */
     String comer(String alimento, int gramaje) {
-    	return nombre + "comer " + gramaje +" gr. de " + alimento;
+    	return nombre + " come " + gramaje +" gr. de " + alimento;
     }
     
     //metodos de clase
