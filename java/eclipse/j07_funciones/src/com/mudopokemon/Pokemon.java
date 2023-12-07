@@ -4,6 +4,7 @@ public class Pokemon {
 	// atributos de instancia(de objeto)
 	String nombre;
 	String tipo;
+	int puntosPoder;
 	
 	// atributos estáticos (de clase)
 	static String nombreGenerico = "Pokemon";
@@ -52,11 +53,19 @@ public class Pokemon {
     	return nombre + " come " + gramaje +" gr. de " + alimento;
     }
     
-    String pelear(Pokemon pokemon) {
+    String pelear(Pokemon pokemonEnemigo) {
     	// TODO confrontar a los pokemones y enviar el mensaje del pokemon
     	// ganador, el ganador es el que tenga mayor puntos de poder
+    	String mensaje = "\n" + nombre + " Vs " + pokemonEnemigo.nombre + " \n";    	
     	
-    	return null;    	
+    	if( puntosPoder == pokemonEnemigo.puntosPoder )
+    		mensaje += "Son compitas";
+    	else if( puntosPoder > pokemonEnemigo.puntosPoder)
+    		mensaje += "El ganador es " + nombre;
+    	else
+    		mensaje += "El ganador es " + pokemonEnemigo.nombre;
+    	
+    	return mensaje;    	
     }
     
     //metodos de clase

@@ -8,14 +8,17 @@ public class ArenaPokemon {
 		Pokemon pikachu = new Pokemon();
 		pikachu.nombre = "Pikachu";
 		pikachu.tipo= "Electrico";
+		pikachu.puntosPoder = 90;
 
 		Pokemon charmander = new Pokemon();
 		charmander.nombre = "Charmander";
 		charmander.tipo= "Fuego";
+		charmander.puntosPoder = 120;
 		
 		Pokemon squirtle = new Pokemon();
 		squirtle.nombre = "Squirtle";
 		squirtle.tipo= "Agua";
+		squirtle.puntosPoder = 50;
 		
 		// Hacemos comer a Pikachu
 		// pikachu.comer("bayas"); //imprime detro del método
@@ -28,8 +31,9 @@ public class ArenaPokemon {
 		System.out.println( Pokemon.nombreFabricante() );
 		System.out.println( charmander.nombreFabricante() );
 		
-		
-		
+		// Pelea de pokemones
+		System.out.println( pikachu.pelear(squirtle) );
+		System.out.println( pikachu.pelear(charmander) );
 
 		
 
