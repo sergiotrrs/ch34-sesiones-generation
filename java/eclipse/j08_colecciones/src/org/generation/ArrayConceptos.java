@@ -54,6 +54,18 @@ public class ArrayConceptos {
 		}
 		
 		// Iterar los códigos de colores con "for each loop"
+		for (int codigoColor : codigoColores) {
+			//System.out.println("El hexadecimal es: " + codigoColor);
+			System.out.printf("El hexadecimal es: 0X%06X %n", codigoColor);
+			System.out.println("El hex es: " + Integer.toHexString(codigoColor));
+		}
+		
+		// Iniciar un arreglo al asignarlo a la variable
+		// String[] frutas = new String[4];
+		String[] frutas = {"Uva", "Mandarina", "Mangos", "Fresa"};
+		
+		// Instanciar un array de 2 dimensiones
+		String[][] participantes = new String[3][5];
 		
 		
 	}
