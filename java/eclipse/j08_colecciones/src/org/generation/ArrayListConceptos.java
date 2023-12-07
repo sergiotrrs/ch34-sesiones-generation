@@ -61,6 +61,36 @@ public class ArrayListConceptos {
 		// Saber si un elemento está la colección con contains()
 		System.out.println("Está \"Mujercitas\" ? " + nombreLibros.contains("Mujercitas")); // true
 		System.out.println("Está \"Vaqueros\" ? " + nombreLibros.contains("Vaqueros")); // false
+		
+		// Iterar a colección con for loop
+		System.out.println("================== Iterar a colección con for loop");
+		for ( int i = 0 ; i < nombreLibros.size() ; i++ ) {
+			System.out.println("Libro: " + nombreLibros.get(i) );
+		}
+		
+		// Iterar la colección con for each
+		System.out.println("================== Iterar la colección con for each");
+		for ( String nombreLibro : nombreLibros ) {
+			System.out.println( "Libro: " + nombreLibro );
+		}
+		
+		// iterando con for each y función lambda
+		nombreLibros.forEach( libro -> System.out.println("Libro: " + libro));
+		
+		// Reemplazar un elemento con set()
+		nombreLibros.set(1, "El Abrigo de Pupa");
+		System.out.println( nombreLibros ); // Piedra Filosofal, El Abrigo de Pupa, El Ramayana..
+		
+		// El pase de dato de los objetos es por referencia
+		// Es necesario usar clone() para que las colecciones sean idependientes
+		
+		// ArrayList<String> books = nombreLibros; // estoy pasando la referencia
+
+		ArrayList<String> books = (ArrayList<String>) nombreLibros.clone() ; // colecciones independientes
+
+		
+		
+				
 	}
 
 }
