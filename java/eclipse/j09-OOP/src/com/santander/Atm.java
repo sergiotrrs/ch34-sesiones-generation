@@ -31,9 +31,13 @@ public class Atm {
 	 *  Si no se agrega algún constructor
 	 *	java proporciona este método.
 	 */
-	 Atm(){
-		 System.out.println("Me estoy instanciando");
+	 Atm(){		 
 		 this.serialNumber = ++counter;		 
+	 }
+	 
+	 Atm(String message){
+		 this();
+		 System.out.println(message);
 	 }
 	 
 	 /**
@@ -55,7 +59,7 @@ public class Atm {
 	  * @param balance cantidad disponible del cajero
 	  */
 	 Atm(double balance){
-		 this();
+		 this("Estoy iniciando mi balance");
 		 this.balance = balance;		 
 	 }
 	 
