@@ -33,8 +33,7 @@ public class Atm {
 	 */
 	 Atm(){
 		 System.out.println("Me estoy instanciando");
-		 // this.serialNumber = ++counter;
-		 generateSerialNumber();
+		 this.serialNumber = ++counter;		 
 	 }
 	 
 	 /**
@@ -42,17 +41,29 @@ public class Atm {
 	  * Los métodos sobrecargados tienen el mismo nombre
 	  * pero diferentes parámetros.
 	  * 
+	  *  this: palabra reservada que se utiliza para 
+	  *  hacer referencia al objeto en el que se encuentra
+	  *  el contexto de la ejecución.
+	  *  
+	  *  Para invocar a un constructor, desde otro contructor
+	  *  se utiliza this y se envía los argumentos del
+	  *  contructor deseado.
+	  *  
+	  *  El llamado a un constructor debe ser la primera
+	  *  línea.
+	  * 
 	  * @param balance cantidad disponible del cajero
 	  */
 	 Atm(double balance){
-		 this.balance = balance;
-		 generateSerialNumber();
+		 this();
+		 this.balance = balance;		 
 	 }
 	 
-	 int generateSerialNumber() {
-		 return this.serialNumber = ++counter;
+	 Atm(boolean isComercialPlace){
+		 this( isComercialPlace? 50_000 : 10_000);
+		 
 	 }
-	
+	 
 	// métodos de instancia
 	
 	// métodos de clase 
@@ -73,6 +84,8 @@ public class Atm {
 		
 		// Creamos el cajero 03 y asignamos $3000 al balance
 		Atm cajero03 = new Atm(3_000);
+		Atm cajero04 = new Atm(true); // balance = 50000
+		Atm cajero05 = new Atm(false); // balance = 10000
 		
 	}
 }
