@@ -13,20 +13,25 @@ public class Bank {
 		System.out.println("Cajero01: " + cajero01.getSerialNumber() );
 		System.out.println("Cajero02: " + cajero02.getSerialNumber() );
 		System.out.println("Cajero03: " + cajero03.getSerialNumber() );
+		deposit( cajero01, 400  );
+		deposit( cajero01, 800  );
+		deposit( cajero01, -600  );
+		deposit( cajero02, 50_000  );
 		
-		cajero01.deposit("3000"); // 13000
-		// cajero02.deposit(-400);
-		// cajero03.deposit( cajero03.getBalance() - 1_000_000 );
-		cajero01.withdraw(5000); // 8000
-		cajero02.withdraw(-5000); // Cantidad menor o igual a cero
-		cajero03.withdraw(5_000_000); // Fondos insuficientes
-		
+
 		System.out.println("Cajero01: " + cajero01.getBalance() ); // 8000
 		System.out.println("Cajero02: " + cajero02.getBalance() ); // 2000
 		System.out.println("Cajero03: " + cajero03.getBalance() ); // 3000
 		
-
-		
+	}
+	
+	static void deposit(Atm atm ,double amount ) {
+		try {
+			atm.deposit(amount);
+		} catch (Exception e) {
+			System.out.println("cajero: "+ atm.getSerialNumber() 
+			+ " Operación rechazada: " + e.getMessage());
+		}
 	}
 
 }
