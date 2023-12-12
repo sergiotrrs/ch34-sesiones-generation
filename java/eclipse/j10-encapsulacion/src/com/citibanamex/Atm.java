@@ -64,8 +64,7 @@ public class Atm {
 		} else {
 			setBalance( getBalance() - amount  );
 			// this.balance -= amount;
-		}
-		
+		}		
 	}
 	
 }
