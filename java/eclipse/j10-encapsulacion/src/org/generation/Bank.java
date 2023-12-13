@@ -23,6 +23,8 @@ public class Bank {
 		System.out.println("Cajero02: " + cajero02.getBalance() ); // 2000
 		System.out.println("Cajero03: " + cajero03.getBalance() ); // 3000
 		
+		cajero01.printLog();
+		
 	}
 	
 	static void deposit(Atm atm ,double amount ) {
