@@ -43,15 +43,15 @@ public class AnimalTest {
 		mascotas.add( new Tamagochi("Memetchi"));
 		
 		// --- Polimorfismo en tiempo de ejecución
-		eat( arca  );
+		eatStatic( arca  );
 		
 	}
 	
-	public static void eat( ArrayList<Animal> animals ) {
+	public static void eatStatic( ArrayList<Animal> animals ) {
 		for(Animal animal : animals ) {
 			System.out.println( animal.eat("tortilla") );
 			System.out.println( animal.sleep() );			
-			// System.out.println( animal.getCommonName() );
+			System.out.println( animal.getCommonName() );
 			
 			if(animal instanceof Cat ) {
 				System.out.println("petName: " + ((Cat)animal).getPetName() );				
