@@ -18,7 +18,7 @@ public class AnimalTest {
 		// El mamífero Gato come delicioso croquetas de pescado
 		// El michi Wero come deliciosas coquetas de pescado cuando se le da la gana
 		System.out.println( wero.eat("croquetas de pescado")); 
-		
+		System.out.println( wero.trick() );
 
 	}
 

@@ -1,6 +1,8 @@
 package com.zoo;
 
-public class Cat extends Feline {
+import com.pet.Pet;
+
+public class Cat extends Feline implements Pet {
 	private String petName;
 	
 	public Cat(String petName, double age) {
@@ -26,6 +28,15 @@ public class Cat extends Feline {
 		return "El michi " + this.getPetName() 
 		+ ", que tiene las garras de " + super.getClawLength() + " cm y tiene " 
 				+ super.getAge() + " años, come deliciosas " + food + " cuando se le da la gana.";
+	}
+	
+	public boolean eat( boolean isHungry) {		
+		return isHungry;
+	}
+
+	@Override
+	public String trick() {
+		return "El michi " + this.getPetName() + " ronronea y deja que le acaricies" ;
 	}
 
 	
