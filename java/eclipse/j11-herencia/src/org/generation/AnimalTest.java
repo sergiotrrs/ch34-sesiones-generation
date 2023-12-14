@@ -1,6 +1,13 @@
 package org.generation;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.pet.Pet;
+import com.toy.Tamagochi;
+import com.zoo.Animal;
 import com.zoo.Cat;
+import com.zoo.Leopard;
 import com.zoo.Mammal;
 
 public class AnimalTest {
@@ -19,6 +26,23 @@ public class AnimalTest {
 		// El michi Wero come deliciosas coquetas de pescado cuando se le da la gana
 		System.out.println( wero.eat("croquetas de pescado")); 
 		System.out.println( wero.trick() );
+		
+		// ========================================================
+		ArrayList< Animal > arca = new ArrayList<>();
+		arca.add(pelusa);
+		arca.add(tecate);
+		arca.add(wero);
+		arca.add( new Leopard(3) );
+
+		Animal solovino = new Leopard(4);
+		solovino = null;
+		solovino = new Cat("Jinata", 2);
+		
+		List <Pet> mascotas = new ArrayList<>();
+		mascotas.add( pelusa );
+		mascotas.add( new Tamagochi("Memetchi"));
+		
+		
 
 	}
 
