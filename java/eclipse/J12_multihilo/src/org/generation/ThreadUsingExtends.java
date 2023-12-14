@@ -62,9 +62,18 @@ public class ThreadUsingExtends {
 		System.out.println("Hilo03 esAlive: " + hilo03.isAlive() );
 		
 		
+		try {
+			hilo01.join();
+			hilo02.join();
+			hilo03.join();
+			
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+		System.out.println("Hilo01 esAlive: " + hilo01.isAlive() );
+		System.out.println("Hilo02 esAlive: " + hilo02.isAlive() );
+		System.out.println("Hilo03 esAlive: " + hilo03.isAlive() );
 		System.out.println("Fin del método main");
-		
-		
-		
 	}
 }
