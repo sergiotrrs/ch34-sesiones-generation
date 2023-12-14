@@ -27,7 +27,7 @@ public abstract class Animal {
 		this.age = age;
 	}
 
-	public String getCommonName() {
+	public final String getCommonName() {
 		return commonName;
 	}
 
