@@ -2,8 +2,9 @@ package com.zoo;
 
 import com.pet.Pet;
 
-public class Cat extends Feline implements Pet {
+public final class Cat extends Feline implements Pet {
 	private String petName;
+	private final int LIVE_NUMBERS = 7;
 	
 	public Cat(String petName, double age) {
 		super("Gato", "Felis catus ", age, .50);
@@ -30,7 +31,8 @@ public class Cat extends Feline implements Pet {
 				+ super.getAge() + " años, come deliciosas " + food + " cuando se le da la gana.";
 	}
 	
-	public boolean eat( boolean isHungry) {		
+	public boolean eat( boolean isHungry) {	
+		
 		return isHungry;
 	}
 
