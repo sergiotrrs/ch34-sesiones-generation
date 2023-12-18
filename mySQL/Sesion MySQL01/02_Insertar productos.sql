@@ -13,4 +13,6 @@ INSERT INTO productos (nombre, precio, categoria) VALUES ("Lavadora", 7000, "Lí
 INSERT INTO productos (nombre, precio, categoria) VALUES ("Taladro", 2500, "Herramientas");
 INSERT INTO productos (nombre, precio, categoria) VALUES ("Desarmador", 50, "Herramientas");
 
+INSERT INTO productos (nombre, precio, categoria) VALUES ("Pinza electricista", 120, "Herramientas");
+
 SELECT * FROM productos;
