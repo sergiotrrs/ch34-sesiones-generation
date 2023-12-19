@@ -10,3 +10,4 @@ INSERT INTO roles(nombre, descripcion) VALUES("vendedor", "Vendedor de productos
 
 -- Mostrar todos los registros
 SELECT * FROM roles;
+
