@@ -66,8 +66,22 @@ SELECT * FROM productos WHERE categoria_id = 4 AND precio > 50;
 -- != <>
 select * from productos where categoria_id != 2 and categoria_id != 4;
 
--- Operadores de rango
+-- Operadores de rango -------------------------------------------------
 -- Mostrar todos los productos que el precio sea >=50 pero <=100
 SELECT * FROM productos WHERE precio >= 50 AND precio <= 100;
 SELECT COUNT(*) FROM productos WHERE precio >= 50 AND precio <= 100; -- 17
 SELECT * FROM productos WHERE precio BETWEEN 50 AND 100;
+-- Mostrar todos los productos que el precio NO sea >=50 y <=100
+SELECT * FROM productos WHERE precio NOT BETWEEN 50 AND 100;
+
+-- Mostrar los productos que sean de categoria_id 2 o 4
+SELECT * FROM productos WHERE categoria_id IN (2, 4);
+-- Mostrar todos los productos que NO sean de la categoria 2 y 4
+SELECT * FROM productos WHERE categoria_id NOT IN (2, 4);
+-- Buscando valores nullos IS NULL
+SELECT * FROM productos WHERE categoria_id IS NULL;
+SELECT * FROM productos WHERE ISNULL(categoria_id);
+-- Buscando valores no nullos IS NOT NULL
+SELECT * FROM productos WHERE categoria_id IS NOT NULL;
+
+
