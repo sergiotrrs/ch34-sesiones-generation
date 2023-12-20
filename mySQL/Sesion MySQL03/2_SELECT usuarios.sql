@@ -26,5 +26,28 @@ SELECT nombre,
        UPPER(nombre)
    FROM usuarios;   
 
+-- Funciones Fecha ----------------------------------
+SELECT CURDATE(); -- la fecha actual
+SELECT NOW(); -- fecha y hora actual
+SELECT localtimestamp(); -- fecha y hora
 
-   
+SELECT nombre, fecha_nacimiento FROM usuarios;
+SELECT 
+   nombre, 
+   fecha_nacimiento,
+   DATE_FORMAT( fecha_nacimiento, "%d/%m/%Y") AS "Fecha nacimiento",
+   DAY( fecha_nacimiento)
+ FROM usuarios
+ WHERE MONTH(fecha_nacimiento) = MONTH( CURDATE() + INTERVAL 1 MONTH ) ;
+
+  SELECT
+   nombre,
+   fecha_nacimiento,
+   DATEDIFF( CURDATE(), fecha_nacimiento ) AS "Días", 
+   FLOOR((DATEDIFF( CURDATE(), fecha_nacimiento ))/365) AS "Años"
+  FROM usuarios
+  WHERE nombre NOT LIKE "%Oswa%";
+  
+-- Hoy es el día de corte, tienes 20 días para pagar
+SELECT NOW(), DATE_ADD( NOW(), INTERVAL 20 DAY ) AS "Fecha límite pago";
+  
