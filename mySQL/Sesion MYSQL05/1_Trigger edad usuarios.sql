@@ -5,10 +5,8 @@ BEFORE INSERT ON usuarios
 FOR EACH ROW
 BEGIN
     DECLARE edad INT;
-    DECLARE fecha_actual TIMESTAMP;
 
     -- Calcular la edad
-    SET fecha_actual = CURRENT_DATE;
     SET edad =  DATE_FORMAT(FROM_DAYS(DATEDIFF(NOW(), new.fecha_nacimiento)), '%Y') + 0 ;
 
     -- Verificar si la edad es menor de 18
