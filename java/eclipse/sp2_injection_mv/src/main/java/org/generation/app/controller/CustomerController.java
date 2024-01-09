@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/v1/customers")
 public class CustomerController {
 	
-	@Autowired 
+
+	@Autowired
 	@Qualifier("userVip")
 	User user;
 	
