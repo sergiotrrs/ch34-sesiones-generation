@@ -1,5 +1,8 @@
 package org.generation.app.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.generation.app.model.User;
@@ -14,9 +17,36 @@ public class UserController {
 	
 	User user;
 
-	@GetMapping // localhost:8080/api/v1/users
-	Map<Integer, User> getAllUser(){
-		return User.usersMock();
+	/*
+	 *  Request Param
+	 *  Vincula los parámetros de una solicitud HTTP con los
+	 *  parámetros del método.
+	 *  Permite extraer los valores de los parámetros de 
+	 *  la consulta (query parameters).
+	 *  Si no se proporciona los valores, se genera la excepción
+	 *  MissingServletRequestParametersException
+	 *  
+	 */
+	@GetMapping // localhost:8080/api/v1/users?count=4
+	Map<Integer, User> getAllUser( 
+			@RequestParam(name="count", required=false, defaultValue="0") int count
+			){
+		
+		if (count == 0) return User.usersMock(); 
+		
+		Map<Integer, User> filterUsers = new HashMap<>(); 
+		List<Integer> usersKey = new ArrayList<>();
+		
+		for (int clave : User.usersMock().keySet() ) {
+			usersKey.add( clave );
+		}
+		
+		for (int i = 0; i < count; i++) {
+			int userKey = usersKey.get(i);
+			filterUsers.put(  userKey , User.usersMock().get(userKey) );
+		}
+				
+		return filterUsers;
 	}
 	
 	/*
