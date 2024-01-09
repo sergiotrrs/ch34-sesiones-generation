@@ -19,12 +19,15 @@ public class UserController {
 		return User.usersMock();
 	}
 	
-	@GetMapping("1") // localhost:8080/api/v1/users/1
-	User getUserById() {
-		user.setFirstname("Livi");
-		user.setLastname("Riv");
-		
-		return user;		
+	/*
+	 *  @GetMapping con Path Variable
+	 *  Path Variable vincula un valor de una variable URL
+	 *  a un parámetro del método.
+	 *  Permite capturar datos dinámicos presentes en la URL 
+	 */
+	@GetMapping("{id}") // localhost:8080/api/v1/users/100
+	User getUserById(@PathVariable("id") int userId ) {             		
+		return User.usersMock().get(userId);		
 	}
 	
 	@GetMapping("message")
