@@ -1,5 +1,6 @@
 package org.generation.app.model;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import lombok.*;
@@ -24,6 +25,7 @@ import lombok.*;
  */
 
 @Component
+@Qualifier("userVip")
 public class UserVip extends User {
 	
 	@Override
