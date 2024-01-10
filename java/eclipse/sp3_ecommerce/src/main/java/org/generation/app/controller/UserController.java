@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("api/v1/users")
 public class UserController {
