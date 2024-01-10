@@ -39,4 +39,8 @@ public class UserController {
 		return newUser;
 	}
 	
+	@GetMapping("query") // localhost:8080/api/v1/users/query?email=jose@gmail.com
+	User getUserByEmail(@RequestParam(name="email") String email) {
+		return userService.getUserByEmail(email);
+	}
 }

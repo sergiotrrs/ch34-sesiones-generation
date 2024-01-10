@@ -20,13 +20,14 @@ public class UserServiceImpl implements UserService {
 		Optional<User> userOptional = userRepository.findById(id);
 		
 		if( userOptional.isPresent()) return userOptional.get();
-		else throw new IllegalStateException("User does not exist");
+		else throw new IllegalStateException("User does not exist with id " + id);
 	}
 
 	@Override
 	public User getUserByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<User> existingUser = userRepository.findByEmail(email);
+		if( existingUser.isPresent()) return existingUser.get();
+		else throw new IllegalStateException("User does not exist with email " + email);
 	}
 
 	@Override
