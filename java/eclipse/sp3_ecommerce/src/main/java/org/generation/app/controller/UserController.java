@@ -26,8 +26,7 @@ public class UserController {
 	@GetMapping("{id}")
 	User getUserById(@PathVariable("id") Long id) {
 		log.info("Se solicita los datos del id:" + id);
-		//User user = userService.getUserById(id);
-		User user= new User();
+		User user = userService.getUserById(id);
 		return user;
 	}
 	
