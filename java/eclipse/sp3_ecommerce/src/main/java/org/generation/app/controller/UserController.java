@@ -43,4 +43,9 @@ public class UserController {
 	User getUserByEmail(@RequestParam(name="email") String email) {
 		return userService.getUserByEmail(email);
 	}
+	
+	@PutMapping("{id}")
+	User updateUser(@RequestBody User user, @PathVariable("id") Long id) {
+		return userService.updateUser(user, id);
+	}
 }

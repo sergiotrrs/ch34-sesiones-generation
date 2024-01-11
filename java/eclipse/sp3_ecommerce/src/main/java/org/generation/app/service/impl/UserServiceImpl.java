@@ -42,4 +42,20 @@ public class UserServiceImpl implements UserService {
 		return users;
 	}
 
+	@Override
+	public User updateUser(User user, Long id) {
+		User existingUser = getUserById(id);
+		existingUser.setFirstName( user.getFirstName());
+		existingUser.setLastName( user.getLastName());
+		existingUser.setBirthdate( user.getBirthdate());
+		// Si modificamos el email, se debe verificar que no exista.
+		return userRepository.save(existingUser);
+	}
+
+	@Override
+	public void deleteUser(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
