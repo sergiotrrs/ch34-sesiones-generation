@@ -48,4 +48,10 @@ public class UserController {
 	User updateUser(@RequestBody User user, @PathVariable("id") Long id) {
 		return userService.updateUser(user, id);
 	}
+	
+	@DeleteMapping("{id}")
+	String deleteUser(@PathVariable("id") Long id ) {
+		userService.deleteUser(id);
+		return "Se eliminó el usuario id " + id;
+	}
 }

@@ -32,6 +32,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User createUser(User user) {
+		user.setId(null);
+		// TODO Verificar que no exista el email.
 		User newUser = userRepository.save( user );
 		return newUser;
 	}
@@ -54,7 +56,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void deleteUser(Long id) {
-		// TODO Auto-generated method stub
+		User existingUser = getUserById(id);
+		userRepository.delete(existingUser);
 		
 	}
 
