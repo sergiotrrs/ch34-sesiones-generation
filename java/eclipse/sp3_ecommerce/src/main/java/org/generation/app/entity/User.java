@@ -2,6 +2,8 @@ package org.generation.app.entity;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -40,8 +42,10 @@ public class User {
 	private boolean active;
 	@Column(name="fecha_nacimiento")
 	private Timestamp birthdate;
-	
-
+	@ManyToOne
+	@JoinColumn(name="fk_role", nullable=false)
+	@JsonIgnoreProperties("description")
+	private Role role;
 }
 
 /*
