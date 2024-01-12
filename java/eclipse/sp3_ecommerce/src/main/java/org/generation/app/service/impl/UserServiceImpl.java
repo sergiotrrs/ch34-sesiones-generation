@@ -33,6 +33,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User createUser(User user) {
 		user.setId(null);
+		user.setActive(true);
 		// TODO Verificar que no exista el email.
 		User newUser = userRepository.save( user );
 		return newUser;
@@ -40,7 +41,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllUsers() {
-		List<User> users = (List<User>) userRepository.findAll();
+		List<User> users = (List<User>) userRepository.findAllByActive(true);
 		return users;
 	}
 
@@ -57,8 +58,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void deleteUser(Long id) {
 		User existingUser = getUserById(id);
-		userRepository.delete(existingUser);
-		
+		// userRepository.delete(existingUser);
+		existingUser.setActive(false);
+		userRepository.save(existingUser);
 	}
 
 }
