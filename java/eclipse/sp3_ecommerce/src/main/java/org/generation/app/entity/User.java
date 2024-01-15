@@ -34,8 +34,8 @@ public class User {
 	@GeneratedValue( strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty(message = "El nombre es requerido")
-	@Size(min = 3, max= 70, message="El nombre debe ser mayor a 3 caracteres y menor a 70" )
+	@NotEmpty(message = "El nombre no debe ser nulo o vacío")
+	@Size(min = 3, max= 70, message="El nombre debe ser mayor a 3 y menor a 70 caracteres" )
 	@Column(name="nombre", nullable=false, length=70)
 	private String firstName;
 	
@@ -44,8 +44,7 @@ public class User {
 	
 	@NotEmpty(message = "E-mail should not be null or empty")
 	@Email(message = "Email address should be valid", regexp="^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z.]{2,10}")
-	@Size(min= 5, max= 100, 
-			message = "E-mail must be between 5 and 100 characters")
+	@Size(min= 5, max= 100, message = "E-mail must be between 5 and 100 characters")
 	@Column(name="email", nullable=false, length=100, unique=true)
 	private String email;
 	
