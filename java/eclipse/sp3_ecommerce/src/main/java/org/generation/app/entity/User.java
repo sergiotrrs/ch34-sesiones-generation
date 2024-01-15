@@ -5,6 +5,9 @@ import java.sql.Timestamp;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 /*
@@ -30,12 +33,22 @@ public class User {
 	// Indica como se generarán automáticamente las claves primarias
 	@GeneratedValue( strategy=GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotEmpty(message = "El nombre es requerido")
+	@Size(min = 3, max= 70, message="El nombre debe ser mayor a 3 caracteres y menor a 70" )
 	@Column(name="nombre", nullable=false, length=70)
 	private String firstName;
+	
 	@Column(name="apellido", nullable=false, length=70)	
 	private String lastName;
+	
+	@NotEmpty(message = "E-mail should not be null or empty")
+	@Email(message = "Email address should be valid", regexp="^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\\.[a-zA-Z.]{2,10}")
+	@Size(min= 5, max= 100, 
+			message = "E-mail must be between 5 and 100 characters")
 	@Column(name="email", nullable=false, length=100, unique=true)
 	private String email;
+	
 	@Column(name="password", nullable=false, length=150)
 	private String password;
 	@Column(name="activo")
