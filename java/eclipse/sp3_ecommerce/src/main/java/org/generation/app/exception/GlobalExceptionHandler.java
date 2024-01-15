@@ -1,10 +1,11 @@
 package org.generation.app.exception;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -20,6 +21,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice // Este componente se utiliza para manejar excepciones globalmente
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
+	@Autowired
+	ErrorDetails errorDetails;
+	
 	
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(
@@ -41,9 +45,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 	
 	
-	@ExceptionHandler( IllegalStateException.class )
-	ResponseEntity<String> handleIllegalStateException(Exception exception){
-		String message = exception.getMessage();
-		return new ResponseEntity<>( message, HttpStatus.BAD_REQUEST );
+	@ExceptionHandler(IllegalStateException.class)
+	ResponseEntity<ErrorDetails> handleIllegalStateException(Exception exception, WebRequest webRequest) {
+		errorDetails.setTimestamp(LocalDateTime.now());
+		errorDetails.setMessage(exception.getMessage());
+		errorDetails.setPath(webRequest.getDescription(false));
+		errorDetails.setErrorCode("RESOURCE_NOT_FOUND");
+
+		return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
 	}
 }

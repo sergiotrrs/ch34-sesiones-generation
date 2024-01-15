@@ -1,9 +1,6 @@
 package org.generation.app.dto;
 
 import java.sql.Timestamp;
-
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Getter
