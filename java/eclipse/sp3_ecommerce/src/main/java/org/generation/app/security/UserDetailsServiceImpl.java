@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+//STEP 4 Leer el usuario de la DB
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

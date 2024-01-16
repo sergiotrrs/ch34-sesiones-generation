@@ -9,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+//STEP 5 Convertir un tipo User a UserDetails
 public class UserDetailsImpl implements UserDetails {
 
 	private User user;
