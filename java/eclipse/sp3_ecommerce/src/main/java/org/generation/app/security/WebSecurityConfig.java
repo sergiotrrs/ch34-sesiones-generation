@@ -9,12 +9,14 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -25,6 +27,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 import java.util.List;
 
 import org.generation.app.security.jwt.JWTAuthenticationFilter;
+import org.generation.app.security.jwt.JWTAuthorizationFilter;
 import org.generation.app.service.UserService;
 
 /**
@@ -64,7 +67,11 @@ public class WebSecurityConfig {
 	
 	// STEP 2 Realizar configuraciones personalizadas del filterChain
 	@Bean
-	SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager authManager) throws Exception {
+	SecurityFilterChain filterChain(
+			HttpSecurity http, 
+			AuthenticationManager authManager,
+			JWTAuthorizationFilter jwtAuthorizationFilter
+			) throws Exception {
 		
 		// STEP 7.3 Crear el objeto y la configuración para jwtAuthenticationFilter
 		JWTAuthenticationFilter jwtAuthenticationFilter = new JWTAuthenticationFilter();
@@ -93,6 +100,15 @@ public class WebSecurityConfig {
 				// interceptar las solicitudes de autenticación y generamos el token en la respuesta
 				.addFilter( jwtAuthenticationFilter )
 				// STEP 8: Agregamos el filtro para las demas solicitudes verificando el token JWT
+				// Interceptamos las solicitudes , extraemos y validamos el token
+				// y autenticamos al usuario
+				.addFilterBefore( jwtAuthorizationFilter  ,  UsernamePasswordAuthenticationFilter.class)
+				/*
+				 * no es necesario almacenar información de sesión en el servidor, 
+				 * ya que toda la información necesaria para la autenticación 
+				 * se encuentra en el token, y cada solicitud es autónoma.
+				 */
+				.sessionManagement(managment -> managment.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.csrf( csrf -> csrf.disable() )
 				.httpBasic( withDefaults()  )
 				.build();
