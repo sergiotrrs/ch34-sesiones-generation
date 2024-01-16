@@ -82,6 +82,10 @@ public class WebSecurityConfig {
 						.requestMatchers("/api/v2/users/**").hasAnyRole("ADMIN", "CUSTOMER")
 						.anyRequest().authenticated()
 						)
+				// STEP 7: Agregamos el filtro de autenticación del login
+				// interceptar las solicitudes de autenticación y generamos el token en la respuesta
+				.addFilter(   )
+				// STEP 8: Agregamos el filtro para las demas solicitudes verificando el token JWT
 				.csrf( csrf -> csrf.disable() )
 				.httpBasic( withDefaults()  )
 				.build();
