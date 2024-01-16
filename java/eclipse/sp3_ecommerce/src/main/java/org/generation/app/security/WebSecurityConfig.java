@@ -3,6 +3,7 @@ package org.generation.app.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -51,11 +52,24 @@ public class WebSecurityConfig {
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		
 		// STEP 2.1 Deshabilitar la seguridad
+//		return http
+//				.authorizeHttpRequests( authorize -> authorize.anyRequest().permitAll()  )
+//				.csrf( csrf -> csrf.disable() )
+//				.httpBasic( withDefaults()  )
+//				.build();				
+		
+		// STEP 2.2 Configurar la seguridad
 		return http
-				.authorizeHttpRequests( authorize -> authorize.anyRequest().permitAll()  )
+				.authorizeHttpRequests( authorize -> authorize
+						.requestMatchers( "/", "/index.html", "/assets/**" ).permitAll()
+						.requestMatchers(HttpMethod.POST, "/api/v1/users",  "/api/v1/roles").permitAll()
+						.requestMatchers("/api/v1/users/**").hasRole("ADMIN")
+						.requestMatchers("/api/v2/users/**").hasAnyRole("ADMIN", "CUSTOMER")
+						.anyRequest().authenticated()
+						)
 				.csrf( csrf -> csrf.disable() )
 				.httpBasic( withDefaults()  )
-				.build();				
+				.build();
 		
 	}
 
