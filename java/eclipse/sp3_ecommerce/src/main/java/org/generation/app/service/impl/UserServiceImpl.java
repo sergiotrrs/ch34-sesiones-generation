@@ -7,6 +7,7 @@ import org.generation.app.entity.User;
 import org.generation.app.repository.UserRepository;
 import org.generation.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,8 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	UserRepository userRepository;
+	@Autowired
+	PasswordEncoder passwordEncoder;
 
 	@Override
 	public User getUserById(Long id) {
@@ -34,6 +37,7 @@ public class UserServiceImpl implements UserService {
 	public User createUser(User user) {
 		user.setId(null);
 		user.setActive(true);
+		user.setPassword( passwordEncoder.encode( user.getPassword() ));
 		// TODO Verificar que no exista el email.
 		User newUser = userRepository.save( user );
 		return newUser;
