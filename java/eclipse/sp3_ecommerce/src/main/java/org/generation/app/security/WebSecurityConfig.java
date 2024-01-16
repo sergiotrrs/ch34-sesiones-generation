@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -31,21 +33,21 @@ public class WebSecurityConfig {
 	PasswordEncoder passwordEncoder;
 	
 	// STEP 1 Autentcación basada en usuarios en memoria
-	@Bean
-	UserDetailsService userDetailsService() {
-		UserDetails sergio = User.builder()
-				.username("sergio")
-				.password( passwordEncoder.encode("234") )
-				.roles("ADMIN")
-				.build();
-		
-		UserDetails tony = User.builder()
-				.username("tony")
-				.password( passwordEncoder.encode("policiadeperritos") )
-				.roles("CUSTOMER")
-				.build();
-		return new InMemoryUserDetailsManager( sergio, tony  );
-	}
+//	@Bean
+//	UserDetailsService userDetailsService() {
+//		UserDetails sergio = User.builder()
+//				.username("sergio")
+//				.password( passwordEncoder.encode("234") ) // "{noop}234"
+//				.roles("ADMIN") // ROLE_ADMIN
+//				.build();
+//		
+//		UserDetails tony = User.builder()
+//				.username("tony")
+//				.password( passwordEncoder.encode("policiadeperritos") )
+//				.roles("CUSTOMER")
+//				.build();
+//		return new InMemoryUserDetailsManager( sergio, tony  );
+//	}
 	
 	// STEP 2 Realizar configuraciones personalizadas del filterChain
 	@Bean
@@ -71,6 +73,28 @@ public class WebSecurityConfig {
 				.httpBasic( withDefaults()  )
 				.build();
 		
+	}
+	
+	/** 
+	 *  AuthenticationManager: Gestiona las operaciones de autenticación.
+	 *  getSharedObject: Obtiene una instancia compartida de AuthenticationManagerBuilder 
+	 *  .userDetailsService: Configura el AuthenticationManagerBuilder 
+	 *  	para utilizar un servicio de detalles de usuario personalizado.
+	 *  userDetailsService: responsable de cargar detalles específicos 
+	 *  	del usuario durante el proceso de autenticación.
+	 *  
+	 */	
+	// STEP 3 Autenticación basada en usuarios de la DB
+	@Bean
+	AuthenticationManager authManager(HttpSecurity httpSecurity) {
+		AuthenticationManagerBuilder authManagerBuilder = httpSecurity
+				.getSharedObject( AuthenticationManagerBuilder.class  );
+		
+		authManagerBuilder
+		 .userDetailsService(  ) // TODO crear la clase UserDetailsServiceImpl
+		 .passwordEncoder( passwordEncoder );
+		
+		return authManagerBuilder.build();
 	}
 
 }
