@@ -53,7 +53,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		
 		UserDetailsImpl userDetails = (UserDetailsImpl) authResult.getPrincipal();
 		
-		String token = "Hola, Soy el Token"; // TODO Crear token con las librerías de JJWT
+		String token = TokenUtils.createToken(userDetails.fullName(), userDetails.getUsername(), userDetails.getAuthorities() );
 				
 		// Opcional: crear un objeto JSON para la respuesta
 		JSONObject jsonResponse = new JSONObject();
