@@ -15,7 +15,7 @@ import io.jsonwebtoken.security.Keys;
 
 public class TokenUtils {
 	
-	private final static String ACCESS_TOKEN_SECRET = "policiadeperritoschauchau";
+	private final static String ACCESS_TOKEN_SECRET = "elpoliciadeperritoschauchauestaenparangaricutirimicuaroEFSDCSDCSDSDSSE";
 	private final static long ACCESS_TOKEN_VALID_SECONDS = 300_000L;
 	
 	public static String createToken(
