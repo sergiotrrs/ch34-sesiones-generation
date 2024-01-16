@@ -24,6 +24,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 import java.util.List;
 
+import org.generation.app.security.jwt.JWTAuthenticationFilter;
 import org.generation.app.service.UserService;
 
 /**
@@ -63,7 +64,13 @@ public class WebSecurityConfig {
 	
 	// STEP 2 Realizar configuraciones personalizadas del filterChain
 	@Bean
-	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	SecurityFilterChain filterChain(HttpSecurity http, AuthenticationManager authManager) throws Exception {
+		
+		// STEP 7.3 Crear el objeto y la configuración para jwtAuthenticationFilter
+		JWTAuthenticationFilter jwtAuthenticationFilter = new JWTAuthenticationFilter();
+		jwtAuthenticationFilter.setAuthenticationManager(  authManager );
+		jwtAuthenticationFilter.setFilterProcessesUrl("/login");
+		
 		
 		// STEP 2.1 Deshabilitar la seguridad
 //		return http
@@ -84,7 +91,7 @@ public class WebSecurityConfig {
 						)
 				// STEP 7: Agregamos el filtro de autenticación del login
 				// interceptar las solicitudes de autenticación y generamos el token en la respuesta
-				.addFilter(   )
+				.addFilter( jwtAuthenticationFilter )
 				// STEP 8: Agregamos el filtro para las demas solicitudes verificando el token JWT
 				.csrf( csrf -> csrf.disable() )
 				.httpBasic( withDefaults()  )
