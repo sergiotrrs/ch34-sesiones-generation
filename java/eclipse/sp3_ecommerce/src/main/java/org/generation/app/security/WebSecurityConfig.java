@@ -16,6 +16,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
 
+import org.generation.app.service.UserService;
+
 /**
 * @EnableWebSecurity: habilita la configuración de seguridad web 
 *   en una aplicación Spring Boot.
@@ -31,6 +33,8 @@ public class WebSecurityConfig {
 	
 	@Autowired
 	PasswordEncoder passwordEncoder;
+	@Autowired
+	UserDetailsService userDetailsService;
 	
 	// STEP 1 Autentcación basada en usuarios en memoria
 //	@Bean
@@ -82,16 +86,17 @@ public class WebSecurityConfig {
 	 *  	para utilizar un servicio de detalles de usuario personalizado.
 	 *  userDetailsService: responsable de cargar detalles específicos 
 	 *  	del usuario durante el proceso de autenticación.
+	 * @throws Exception 
 	 *  
 	 */	
 	// STEP 3 Autenticación basada en usuarios de la DB
 	@Bean
-	AuthenticationManager authManager(HttpSecurity httpSecurity) {
+	AuthenticationManager authManager(HttpSecurity httpSecurity) throws Exception {
 		AuthenticationManagerBuilder authManagerBuilder = httpSecurity
 				.getSharedObject( AuthenticationManagerBuilder.class  );
 		
 		authManagerBuilder
-		 .userDetailsService(  ) // TODO crear la clase UserDetailsServiceImpl
+		 .userDetailsService( userDetailsService ) 
 		 .passwordEncoder( passwordEncoder );
 		
 		return authManagerBuilder.build();
