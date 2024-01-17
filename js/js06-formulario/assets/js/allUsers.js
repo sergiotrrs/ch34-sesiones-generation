@@ -5,7 +5,7 @@ const enviarDatosAlServidor = async( token  ) => {
 
     console.table( token );
     
-    const url = "https://sp3-eccomerce.onrender.com//api/v2/users";
+    const url = "https://sp3-eccomerce.onrender.com/api/v2/users";
 
     try {
         const response = await fetch( url ,{
