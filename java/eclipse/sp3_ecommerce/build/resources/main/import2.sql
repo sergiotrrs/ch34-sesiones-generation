@@ -1,0 +1,3 @@
+INSERT INTO usuarios( nombre, apellido, fecha_nacimiento, email, password, activo) VALUES("Bob", "Esponja", "1986-07-14", "bob@nickelodeon.com", "123", 1);
+INSERT INTO usuarios( nombre, apellido, fecha_nacimiento, email, password, activo) VALUES("Patricio", "Estrella", "1986-07-15", "patricio@nickelodeon.com", "123", 1);;
+INSERT INTO usuarios( nombre, apellido, fecha_nacimiento, email, password, activo) VALUES("Arenira", "Mejillas", "1986-07-16", "arenita@nickelodeon.com", "123", 0);
