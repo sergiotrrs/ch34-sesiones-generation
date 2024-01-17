@@ -16,6 +16,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 /*
  *  Mockito es una biblioteca de pruebas unitarias
@@ -34,7 +35,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 // Lo siguiente inicializará automáticamente los objetos mock y
 // las anotaciones de Mockito en la clase prueba
 @ExtendWith(MockitoExtension.class)
-public class CustomerDtoServiceImplTest {
+public class CustomerServiceImplTest {
 	
 	// Inyectar automáticamente los objetos mocks en la clase bajo prueba.
 	@InjectMocks
@@ -46,6 +47,9 @@ public class CustomerDtoServiceImplTest {
 	// la ejecución de la prueba unitaria.
 	@Mock
 	private UserRepository userRepository;
+	
+	@Mock
+	private PasswordEncoder passwordEncoder;
 	
 	User userMock;
 	
@@ -79,6 +83,28 @@ public class CustomerDtoServiceImplTest {
 		assertEquals( 100L, existingUser.getId() , "Verificando el Id"  );
 		assertEquals( "robin@disney.com", existingUser.getEmail() , "Verificando el email"  );
 		assertEquals( "Robin", existingUser.getLastName() , "Verificando el apellido"  );
+	}
+	
+	@Test
+	void createUserTest() {
+		
+		User postUser = User.builder()
+				.id(null)
+				.firstName("Christofer")
+				.lastName("Robin")
+				.email("robin@disney.com")
+				.password("tigger")
+				.active(false)
+				.build();
+		
+		Mockito.when(  userRepository.save( postUser )).thenReturn( userMock );
+		Mockito.when(  passwordEncoder.encode("tigger")).thenReturn( "t1gg3r" );
+		
+		User registeredUser = userService.createUser(postUser);
+		
+		assertEquals(true, registeredUser.isActive());
+		assertEquals(100L, registeredUser.getId() );
+		
 	}
 
 }
