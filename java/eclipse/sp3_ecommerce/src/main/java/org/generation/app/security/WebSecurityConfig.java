@@ -143,7 +143,7 @@ public class WebSecurityConfig {
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500", "https://ch30-spring.onrender.com") );
+		configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500", "https://sp3-eccomerce.onrender.com") );
 		configuration.setAllowedMethods( List.of("GET", "POST", "PUT", "DELETE") );
 		configuration.setAllowedHeaders( List.of("Authorization","Content-Type") );
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

@@ -1,5 +1,5 @@
 # Entorno de ejecución para aplicaciones java basado en OpenJDK 17
-FROM azul/zulu-openjdk:17-lastest
+FROM azul/zulu-openjdk:17-latest
 # copia el archivo .jar de la aplicación al directorio raíz del contenedor
 # y le cambie el nombre a app.jar
 COPY build/libs/sp3_ecommerce-0.0.1-SNAPSHOT.jar app.jar
