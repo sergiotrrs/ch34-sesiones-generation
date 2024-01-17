@@ -10,6 +10,8 @@ public interface UserDtoService {
 	UserDto getUserById(Long id);
 	UserDto getUserByEmail(String email);
 	UserDto createUser(User user);
+	UserDto createCustomer(User user);
+	
 	List<UserDto> getAllUsers();
 	UserDto updateUser(User user, Long id);
 	void deleteUser(Long id);

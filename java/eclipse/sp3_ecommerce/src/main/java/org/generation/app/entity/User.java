@@ -25,6 +25,7 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
+@Builder
 @Entity
 @Table(name="usuarios")
 public class User {
