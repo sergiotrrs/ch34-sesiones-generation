@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.generation.app.dto.UserDto;
+import org.generation.app.entity.Role;
 import org.generation.app.entity.User;
 import org.generation.app.service.UserDtoService;
 import org.generation.app.service.UserService;
@@ -67,8 +68,8 @@ public class UserDtoServiceImpl implements UserDtoService {
 
 	@Override
 	public UserDto createCustomer(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		user.setRole( new Role(2L,"",""));
+		return createUser(user);
 	}
 
 }

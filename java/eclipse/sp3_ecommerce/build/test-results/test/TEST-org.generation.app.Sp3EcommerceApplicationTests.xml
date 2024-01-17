@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.generation.app.Sp3EcommerceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-17T21:16:58" hostname="T3554" time="0.647">
+<testsuite name="org.generation.app.Sp3EcommerceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-17T23:29:44" hostname="T3554" time="1.853">
   <properties/>
-  <testcase name="contextLoads()" classname="org.generation.app.Sp3EcommerceApplicationTests" time="0.647"/>
-  <system-out><![CDATA[15:16:52.405 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.generation.app.Sp3EcommerceApplicationTests]: Sp3EcommerceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:16:52.552 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.generation.app.Sp3EcommerceApplication for test class org.generation.app.Sp3EcommerceApplicationTests
+  <testcase name="contextLoads()" classname="org.generation.app.Sp3EcommerceApplicationTests" time="1.853"/>
+  <system-out><![CDATA[17:29:16.781 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.generation.app.Sp3EcommerceApplicationTests]: Sp3EcommerceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:29:17.473 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.generation.app.Sp3EcommerceApplication for test class org.generation.app.Sp3EcommerceApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,7 +13,7 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.1)
 
-2024-01-17T15:16:53.100-06:00  WARN 11504 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+2024-01-17T17:29:20.495-06:00  WARN 1532 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -22,36 +22,36 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2024-01-17T15:16:53.116-06:00  INFO 11504 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : Starting Sp3EcommerceApplicationTests using Java 17.0.8 with PID 11504 (started by TuX3 in C:\generation\ch34\sesiones\java\eclipse\sp3_ecommerce)
-2024-01-17T15:16:53.117-06:00  INFO 11504 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : The following 1 profile is active: "${PROFILE}"
-2024-01-17T15:16:54.154-06:00  INFO 11504 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-17T15:16:54.265-06:00  INFO 11504 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 5 JPA repository interfaces.
-2024-01-17T15:16:54.915-06:00  INFO 11504 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-17T15:16:55.192-06:00  INFO 11504 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:873bc668-dd8a-47d4-854c-d2462bacf1b4 user=SA
-2024-01-17T15:16:55.194-06:00  INFO 11504 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-17T15:16:55.263-06:00  INFO 11504 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-17T15:16:55.368-06:00  INFO 11504 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
-2024-01-17T15:16:55.427-06:00  INFO 11504 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-01-17T15:16:55.735-06:00  INFO 11504 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-17T15:16:56.948-06:00  INFO 11504 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-17T15:16:56.964-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:20.643-06:00  INFO 1532 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : Starting Sp3EcommerceApplicationTests using Java 17.0.8 with PID 1532 (started by TuX3 in C:\generation\ch34\sesiones\java\eclipse\sp3_ecommerce)
+2024-01-17T17:29:20.651-06:00  INFO 1532 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : The following 1 profile is active: "${PROFILE}"
+2024-01-17T17:29:25.585-06:00  INFO 1532 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-17T17:29:26.015-06:00  INFO 1532 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 383 ms. Found 5 JPA repository interfaces.
+2024-01-17T17:29:29.352-06:00  INFO 1532 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-17T17:29:30.660-06:00  INFO 1532 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:5bd3c732-d2e3-4c71-804d-4827beecd5f8 user=SA
+2024-01-17T17:29:30.669-06:00  INFO 1532 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-17T17:29:31.166-06:00  INFO 1532 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-17T17:29:31.925-06:00  INFO 1532 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-17T17:29:32.250-06:00  INFO 1532 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-17T17:29:33.506-06:00  INFO 1532 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-17T17:29:38.022-06:00  INFO 1532 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-17T17:29:38.086-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     drop table if exists order_has_product cascade 
-2024-01-17T15:16:56.968-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.103-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     drop table if exists product_order cascade 
-2024-01-17T15:16:56.968-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.104-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     drop table if exists productos cascade 
-2024-01-17T15:16:56.968-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.106-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     drop table if exists role cascade 
-2024-01-17T15:16:56.969-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.108-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     drop table if exists usuarios cascade 
-2024-01-17T15:16:56.973-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.124-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     create table order_has_product (
         quantity integer,
         order_id bigint not null,
         product_id bigint not null,
         primary key (order_id, product_id)
     )
-2024-01-17T15:16:56.979-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.140-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     create table product_order (
         monto_total float(53),
         fecha_compra timestamp(6),
@@ -59,21 +59,21 @@ You may wish to exclude one of them to ensure predictable runtime behavior
         id bigint generated by default as identity,
         primary key (id)
     )
-2024-01-17T15:16:56.983-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.159-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     create table productos (
         precio float(53),
         id bigint generated by default as identity,
         nombre varchar(70) not null,
         primary key (id)
     )
-2024-01-17T15:16:56.986-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.165-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     create table role (
         id_rol bigint generated by default as identity,
         descripcion varchar(70),
         nombre_rol varchar(70) not null,
         primary key (id_rol)
     )
-2024-01-17T15:16:56.988-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.174-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     create table usuarios (
         activo boolean,
         fecha_nacimiento timestamp(6),
@@ -85,31 +85,31 @@ You may wish to exclude one of them to ensure predictable runtime behavior
         password varchar(150) not null,
         primary key (id)
     )
-2024-01-17T15:16:56.991-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.189-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     alter table if exists order_has_product 
        add constraint FKb2ameb29ljo9v6lio7hfyb78e 
        foreign key (order_id) 
        references product_order
-2024-01-17T15:16:57.005-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.242-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     alter table if exists order_has_product 
        add constraint FKihkcew7yf7k4lfrbyyuu1ma6p 
        foreign key (product_id) 
        references productos
-2024-01-17T15:16:57.006-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.247-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     alter table if exists product_order 
        add constraint FK1lyaxdk4dopw38wma862eytrq 
        foreign key (fk_user_id) 
        references usuarios
-2024-01-17T15:16:57.008-06:00 DEBUG 11504 --- [    Test worker] org.hibernate.SQL                        : 
+2024-01-17T17:29:38.251-06:00 DEBUG 1532 --- [    Test worker] org.hibernate.SQL                        : 
     alter table if exists usuarios 
        add constraint FKlf6uycoq9td3bgl4lj8rpajma 
        foreign key (fk_role) 
        references role
-2024-01-17T15:16:57.013-06:00  INFO 11504 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-17T15:16:57.669-06:00  WARN 11504 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-17T15:16:57.844-06:00  INFO 11504 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2024-01-17T15:16:58.172-06:00  INFO 11504 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5c450960, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c5fbde4, org.springframework.security.web.context.SecurityContextHolderFilter@671561b9, org.springframework.security.web.header.HeaderWriterFilter@2898c70d, org.springframework.web.filter.CorsFilter@7021bb55, org.springframework.security.web.authentication.logout.LogoutFilter@1dc987b, org.generation.app.security.jwt.JWTAuthorizationFilter@edb8f0c, org.generation.app.security.jwt.JWTAuthenticationFilter@6023b54f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3652dd19, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fd70118, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1db7c267, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14d9ae22, org.springframework.security.web.session.SessionManagementFilter@64a00fe0, org.springframework.security.web.access.ExceptionTranslationFilter@41c56930, org.springframework.security.web.access.intercept.AuthorizationFilter@1851f19f]
-2024-01-17T15:16:58.591-06:00  INFO 11504 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : Started Sp3EcommerceApplicationTests in 5.807 seconds (process running for 7.234)
+2024-01-17T17:29:38.275-06:00  INFO 1532 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-17T17:29:40.939-06:00  WARN 1532 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-17T17:29:41.690-06:00  INFO 1532 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-01-17T17:29:43.103-06:00  INFO 1532 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e8b0ab5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ef34eb3, org.springframework.security.web.context.SecurityContextHolderFilter@6441cff1, org.springframework.security.web.header.HeaderWriterFilter@2ac00dc9, org.springframework.web.filter.CorsFilter@2719139f, org.springframework.security.web.authentication.logout.LogoutFilter@7021bb55, org.generation.app.security.jwt.JWTAuthorizationFilter@35d62807, org.generation.app.security.jwt.JWTAuthenticationFilter@5dfc7b3f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@40e41f88, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f09d998, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@cbd3871, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b641c97, org.springframework.security.web.session.SessionManagementFilter@68a1bb31, org.springframework.security.web.access.ExceptionTranslationFilter@28be7db5, org.springframework.security.web.access.intercept.AuthorizationFilter@449f9628]
+2024-01-17T17:29:44.752-06:00  INFO 1532 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : Started Sp3EcommerceApplicationTests in 26.136 seconds (process running for 33.662)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

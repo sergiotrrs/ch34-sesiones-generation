@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.generation.app.service.impl.UserDtoServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-17T23:29:48" hostname="T3554" time="0.193">
+  <properties/>
+  <testcase name="createCustomerTest()" classname="org.generation.app.service.impl.UserDtoServiceImplTest" time="0.193"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

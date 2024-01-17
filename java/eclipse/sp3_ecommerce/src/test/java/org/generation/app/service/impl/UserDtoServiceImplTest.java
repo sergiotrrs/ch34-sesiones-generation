@@ -2,12 +2,9 @@ package org.generation.app.service.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Optional;
-
 import org.generation.app.dto.UserDto;
 import org.generation.app.entity.Role;
 import org.generation.app.entity.User;
-import org.generation.app.repository.UserRepository;
 import org.generation.app.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
