@@ -1,7 +1,7 @@
-console.log("JS06- formulario");
+console.log("JS06- Login");
 
 // Obtener la referencia del formulario
-const registerForm = document.forms["registerForm"];
+const registerForm = document.forms["loginForm"];
 
 /**
  * Adjunto un controlador de eventos a un elemento HTML.
@@ -21,37 +21,13 @@ registerForm.addEventListener( "submit" , ( event )=>{
     const user = {
         email : registerForm.elements["inputEmail4"].value ,
         password : registerForm.elements["inputPassword4"].value ,
-        confirmPassword : registerForm.elements["inputPassword5"].value,
-        termsandconditions : registerForm.elements["gridCheck"].checked
     }
 
-    if( datosVerificados( user )  ){
         enviarDatosAlServidor( user );
-    }
+
 
 } );
 
-const datosVerificados = ( user ) => {
-    let response = true;
-
-    if( user.email === "" ){
-        mensajeError("Falta introducir el email");
-        response = false;
-    } else if( user.password.length < 8) {
-        mensajeError("El password debe ser mayor o igual a 8 caracteres");
-        response = false;
-    } else if( user.password !== user.confirmPassword) {
-        mensajeError("La confirmación de contraseña no coincide");
-        response = false;
-    } else if ( !user.termsandconditions ) {
-        mensajeError("Debe aceptar los términos y condiciones");
-        response = false;
-    } else {
-        mensajeError("");
-    }
-
-    return response;
-}
 
 const mensajeError = ( message ) =>{
     console.log( message);
@@ -70,19 +46,13 @@ const mensajeError = ( message ) =>{
 
 const enviarDatosAlServidor = async( user ) => {
     const userPost = {
-        firstName: "Tony",
-        lastName: "Doe",
         email: user.email,
-        birthdate: "1994-01-23",
         password: user.password,
-        role: {
-            id: 2
-        }
     }
 
     console.table( userPost );
     
-    const url = "https://sp3-eccomerce.onrender.com/api/v1/users";
+    const url = "https://sp3-eccomerce.onrender.com/login";
 
     try {
         const response = await fetch( url ,{
@@ -93,13 +63,14 @@ const enviarDatosAlServidor = async( user ) => {
             }
         });
         console.log(response);
-        const newUser = await response.json();
-        console.log( newUser );
-        alert("Registro exitoso");
+        const tokenJwt = await response.json();
+        console.log( tokenJwt );
+        localStorage.setItem("token",tokenJwt.token);
+        alert("Login exitoso");
         
     } catch (error) {
         console.error( error );
-        alert("Error en el registro");
+        alert("Error en el login");
     }
 
 }
