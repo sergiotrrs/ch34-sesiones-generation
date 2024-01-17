@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 // @Log4j2
-@CrossOrigin(origins = "*")
+// @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("api/v2/users")
 public class UserDtoController {

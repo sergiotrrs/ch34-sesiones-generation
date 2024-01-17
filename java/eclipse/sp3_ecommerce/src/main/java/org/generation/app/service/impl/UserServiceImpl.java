@@ -39,6 +39,9 @@ public class UserServiceImpl implements UserService {
 		user.setActive(true);
 		user.setPassword( passwordEncoder.encode( user.getPassword() ));
 		// TODO Verificar que no exista el email.
+		if ( userRepository.existsByEmail(user.getEmail()) ) {
+			throw new IllegalStateException("User exist with email " + user.getEmail());
+		}
 		User newUser = userRepository.save( user );
 		return newUser;
 	}
