@@ -11,7 +11,7 @@ const enviarDatosAlServidor = async( token  ) => {
         const response = await fetch( url ,{
             method: "GET",
             headers: { 
-                "Authorization":`Bearer ${token}`
+                Authorization:`Bearer ${token}`
             }
         });
         console.log(response);
