@@ -24,7 +24,7 @@ import lombok.extern.log4j.Log4j2;
 public class TokenUtils {
 	
 	private final static String ACCESS_TOKEN_SECRET = "elpoliciadeperritoschauchauestaenparangaricutirimicuaroEFSDCSDCSDSDSSE";
-	private final static long ACCESS_TOKEN_VALID_SECONDS = 300_000L;
+	private final static long ACCESS_TOKEN_VALID_SECONDS = 900L;
 	
 	// STEP 7.3 Creación del token JWT
 	public static String createToken(
@@ -33,7 +33,7 @@ public class TokenUtils {
 			Collection<? extends GrantedAuthority> authorities  ) {
 		
 		
-		Date expirationDate = new Date( System.currentTimeMillis() + ACCESS_TOKEN_VALID_SECONDS  );
+		Date expirationDate = new Date( System.currentTimeMillis() + ACCESS_TOKEN_VALID_SECONDS * 1000 );
 		SecretKey secretKey = Keys.hmacShaKeyFor( Decoders.BASE64.decode(ACCESS_TOKEN_SECRET ));
 		
 		// Datos extras en el payload

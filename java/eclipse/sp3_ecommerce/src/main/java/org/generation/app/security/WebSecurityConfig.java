@@ -48,7 +48,7 @@ public class WebSecurityConfig {
 	@Autowired
 	UserDetailsService userDetailsService;
 	
-	// STEP 1 Autentcación basada en usuarios en memoria
+	// STEP 1 Autenticación basada en usuarios en memoria
 //	@Bean
 //	UserDetailsService userDetailsService() {
 //		UserDetails sergio = User.builder()
@@ -91,9 +91,12 @@ public class WebSecurityConfig {
 				.cors( Customizer.withDefaults() )
 				.authorizeHttpRequests( authorize -> authorize
 						.requestMatchers( "/", "/index.html", "/assets/**" ).permitAll()
-						.requestMatchers(HttpMethod.POST, "/api/v1/users",  "/api/v1/roles").permitAll()
-						.requestMatchers("/api/v1/users/**").hasRole("ADMIN")
-						.requestMatchers("/api/v2/users/**").hasAnyRole("ADMIN", "CUSTOMER")
+						.requestMatchers(HttpMethod.POST, "/api/v1/users").permitAll()
+						.requestMatchers(HttpMethod.GET, "/api/v1/products").permitAll()
+						.requestMatchers("/api/v1/users/**", "/api/v1/roles/**").hasRole("ADMIN")
+						.requestMatchers("/api/v2/users/**", 
+										 "/api/v1/orders/**", 
+										 "/api/v1/orders-has-products/**").hasAnyRole("ADMIN", "CUSTOMER")
 						.anyRequest().authenticated()
 						)
 				// STEP 7: Agregamos el filtro de autenticación del login
@@ -102,12 +105,10 @@ public class WebSecurityConfig {
 				// STEP 8: Agregamos el filtro para las demas solicitudes verificando el token JWT
 				// Interceptamos las solicitudes , extraemos y validamos el token
 				// y autenticamos al usuario
-				.addFilterBefore( jwtAuthorizationFilter  ,  UsernamePasswordAuthenticationFilter.class)
-				/*
-				 * no es necesario almacenar información de sesión en el servidor, 
-				 * ya que toda la información necesaria para la autenticación 
-				 * se encuentra en el token, y cada solicitud es autónoma.
-				 */
+				.addFilterBefore( jwtAuthorizationFilter  ,  UsernamePasswordAuthenticationFilter.class)				
+			    // no es necesario almacenar información de sesión en el servidor, 
+				// ya que toda la información necesaria para la autenticación 
+				// se encuentra en el token, y cada solicitud es autónoma.				 
 				.sessionManagement(managment -> managment.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.csrf( csrf -> csrf.disable() )
 				.httpBasic( withDefaults()  )
@@ -122,7 +123,7 @@ public class WebSecurityConfig {
 	 *  	para utilizar un servicio de detalles de usuario personalizado.
 	 *  userDetailsService: responsable de cargar detalles específicos 
 	 *  	del usuario durante el proceso de autenticación.
-	 * @throws Exception 
+	 * 
 	 *  
 	 */	
 	// STEP 3 Autenticación basada en usuarios de la DB
@@ -143,9 +144,13 @@ public class WebSecurityConfig {
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500", "https://sp3-eccomerce.onrender.com", "*") );
+		// configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500", "https://sp3-eccomerce.onrender.com") );
+		configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500", "https://ecommer-generica.netlify.app") );
 		configuration.setAllowedMethods( List.of("GET", "POST", "PUT", "DELETE") );
 		configuration.setAllowedHeaders( List.of("Authorization","Content-Type") );
+		
+		// Para todas las rutas en la aplicación ("/**"), 
+		// aplique la configuración CORS definida en el objeto configuration.
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		source.registerCorsConfiguration("/**", configuration);
 		return source;

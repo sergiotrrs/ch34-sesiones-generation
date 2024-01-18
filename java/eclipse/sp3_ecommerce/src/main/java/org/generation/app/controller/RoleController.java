@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 //@Log4j2
-@CrossOrigin(origins = "*")
+// @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("api/v1/roles")
 public class RoleController {

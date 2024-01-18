@@ -25,8 +25,14 @@ public class Product {
 	@GeneratedValue( strategy=GenerationType.IDENTITY)
 	private Long id;
 	@Column(name="nombre", nullable=false, length=70)
-	private String name;
+	private String name;	
+	@Column(name="description", nullable=false, length=150)
+	private String description;
 	@Column(name="precio")
 	private Double price;
+	@Column(name="url-image", length=100)
+	private String urlImage;
+	@Column(name="activo")
+	private boolean active;
 	
 }

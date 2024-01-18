@@ -52,7 +52,9 @@ const enviarDatosAlServidor = async( user ) => {
 
     console.table( userPost );
     
-    const url = "https://sp3-eccomerce.onrender.com/login";
+    //const url = "https://sp3-eccomerce.onrender.com/login";
+    const url = "http://localhost:8080/login";
+//
 
     try {
         const response = await fetch( url ,{
