@@ -19,13 +19,16 @@ registerForm.addEventListener( "submit" , ( event )=>{
     console.log(event);
 
     const user = {
-        email : registerForm.elements["inputEmail4"].value ,
-        password : registerForm.elements["inputPassword4"].value ,
-        confirmPassword : registerForm.elements["inputPassword5"].value,
+        firstName : registerForm.elements["inputFirstName"].value ,
+        lastName : registerForm.elements["inputLastName"].value ,
+        birthDate : registerForm.elements["inputBirthDate"].value ,
+        email : registerForm.elements["inputEmail"].value ,
+        password : registerForm.elements["inputPassword"].value ,
+        confirmPassword : registerForm.elements["inputPassword2"].value,
         termsandconditions : registerForm.elements["gridCheck"].checked
     }
 
-    if( datosVerificados( user )  ){
+    if( datosVerificados( user )  ){        
         enviarDatosAlServidor( user );
     }
 
@@ -70,10 +73,10 @@ const mensajeError = ( message ) =>{
 
 const enviarDatosAlServidor = async( user ) => {
     const userPost = {
-        firstName: "Tony",
-        lastName: "Doe",
+        firstName: user.fistName,
+        lastName: user.lastName,
         email: user.email,
-        birthdate: "1994-01-23",
+        birthdate: user.birthdate,
         password: user.password,
         role: {
             id: 2
