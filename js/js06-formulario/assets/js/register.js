@@ -73,10 +73,10 @@ const mensajeError = ( message ) =>{
 
 const enviarDatosAlServidor = async( user ) => {
     const userPost = {
-        firstName: user.fistName,
+        firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
-        birthdate: user.birthdate,
+        birthdate: user.birthDate,
         password: user.password,
         role: {
             id: 2
@@ -86,6 +86,7 @@ const enviarDatosAlServidor = async( user ) => {
     console.table( userPost );
     
     const url = "https://sp3-eccomerce.onrender.com/api/v1/users";
+    //const url = "http://localhost:8080/api/v1/users";
 
     try {
         const response = await fetch( url ,{
