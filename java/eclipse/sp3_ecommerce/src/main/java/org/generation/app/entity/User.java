@@ -41,6 +41,7 @@ public class User {
 	private String firstName;
 	
 	@Column(name="apellido", nullable=false, length=70)	
+	@Size(min = 3, max= 70, message="El apellido debe ser mayor a 3 y menor a 70 caracteres" )
 	private String lastName;
 	
 	@NotEmpty(message = "E-mail should not be null or empty")
@@ -51,10 +52,13 @@ public class User {
 	
 	@Column(name="password", nullable=false, length=150)
 	private String password;
+	
 	@Column(name="activo")
 	private boolean active;
+	
 	@Column(name="fecha_nacimiento")
 	private Timestamp birthdate;
+	
 	@ManyToOne
 	@JoinColumn(name="fk_role", nullable=false)
 	@JsonIgnoreProperties("description")

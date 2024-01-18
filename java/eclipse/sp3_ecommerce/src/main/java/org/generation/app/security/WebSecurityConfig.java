@@ -93,7 +93,7 @@ public class WebSecurityConfig {
 						.requestMatchers( "/", "/index.html", "/assets/**" ).permitAll()
 						.requestMatchers(HttpMethod.POST, "/api/v1/users").permitAll()
 						.requestMatchers(HttpMethod.GET, "/api/v1/products").permitAll()
-						.requestMatchers("/api/v1/users/**", "/api/v1/roles/**").hasRole("ADMIN")
+						.requestMatchers("/api/v1/users/**", "/api/v1/roles/**", "/api/v1/products/**").hasRole("ADMIN")
 						.requestMatchers("/api/v2/users/**", 
 										 "/api/v1/orders/**", 
 										 "/api/v1/orders-has-products/**").hasAnyRole("ADMIN", "CUSTOMER")
@@ -123,8 +123,6 @@ public class WebSecurityConfig {
 	 *  	para utilizar un servicio de detalles de usuario personalizado.
 	 *  userDetailsService: responsable de cargar detalles específicos 
 	 *  	del usuario durante el proceso de autenticación.
-	 * 
-	 *  
 	 */	
 	// STEP 3 Autenticación basada en usuarios de la DB
 	@Bean
@@ -144,7 +142,6 @@ public class WebSecurityConfig {
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		// configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500", "https://sp3-eccomerce.onrender.com") );
 		configuration.setAllowedOrigins( List.of("http://127.0.0.1:5500", "https://ecommer-generica.netlify.app") );
 		configuration.setAllowedMethods( List.of("GET", "POST", "PUT", "DELETE") );
 		configuration.setAllowedHeaders( List.of("Authorization","Content-Type") );
